@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Course</th>
+    <th>id</th>
     <th>Name</th>
     <th></th>
     <th></th>
@@ -11,7 +11,7 @@
 
 <% @levels.each do |level| %>
   <tr>
-    <td><%= level.course_id %></td>
+    <td><%= level.id %></td>
     <td><%= level.name %></td>
     <td><%= link_to 'Show', level %></td>
     <td><%= link_to 'Edit', edit_level_path(level) %></td>

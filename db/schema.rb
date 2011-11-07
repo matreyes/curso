@@ -11,10 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107140856) do
+ActiveRecord::Schema.define(:version => 20111107171931) do
 
   create_table "levels", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tag"
+  end
+
+  create_table "quizzes", :force => true do |t|
+    t.integer  "level_id"
+    t.integer  "user_id"
+    t.text     "response"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -10,7 +10,6 @@
   <%= @level.name %>
 </p>
 
-<%= render @level.name_partial rescue nil  %>
+<%= render @level.tag rescue nil  %>
 
-<%= link_to 'Edit', edit_level_path(@level) %> |
 <%= link_to 'Back', levels_path %>

@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	
+	<header>
+		<%= render 'layouts/header'%>
+	</header>
+	
+	<div class="container">
+		<%= yield %>
+	
+	<footer>
+    <p>&copy; PASA 2011<br>
+		  Desarrollado por NonnaLabs&reg;</p>
+  </footer>
+	
+	</div>
+	
+	
 </body>
 </html>

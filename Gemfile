@@ -34,4 +34,4 @@ end
 
 gem 'gravatar_image_tag'
 
-
+gem 'twitter-bootstrap-rails'

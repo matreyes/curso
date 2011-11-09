@@ -1,0 +1,25 @@
+<div class="topbar">
+	<div class="fill">
+		<div class="container">
+			<%= link_to "Pasa", levels_path, class: 'brand' %>
+			<ul class="nav">
+				<% @levels.each do |level| %>
+					<% if level == @level %>
+					<li class="active"><%= link_to level.name, level %></li>
+					<% else %>
+					<li><%= link_to level.name, level %></li>
+					<% end %>
+				<% end %>
+			</ul>
+			
+			
+			<form action="" class="pull-right">
+				<input class="input-small" type="text" placeholder="rut">
+				<input class="input-small" type="password" placeholder="contraseña">
+				<button class="btn" type="submit">Ingresar</button>
+			</form>
+			
+			
+		</div>
+	</div>
+</div>

@@ -1,15 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
 
-<p>
-  <b>Course:</b>
-  <%= @level.id %>
-</p>
+	<div class="page-header">
+		<h1><%= @level.name %></h1>
+	</div>
 
-<p>
-  <b>Name:</b>
-  <%= @level.name %>
-</p>
+	<div class="row">
 
-<%= render @level.tag rescue nil  %>
+		<div class="span10">
+				
+				<%= render @level.tag rescue nil  %>
+				
+		</div>
 
-<%= link_to 'Back', levels_path %>
+		<div class="span4">
+			<div class="gravatar"><%= gravatar_image_tag 'matreyes@gmail.com', gravatar: {size: 60} %></div>
+		</div>
+		
+	</div>
+</div>

@@ -1,5 +1,9 @@
 Cursouno::Application.routes.draw do
-  resources :levels
+  resources :levels do
+    resources :quizzes
+  end
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

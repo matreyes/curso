@@ -7,4 +7,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-levels = Level.create([{ name: 'Apertura', tag: 'aper' }, { name: 'Problematización', tag: 'prob' }, { name: 'Información', tag: 'info' }])
+levels = Level.create([
+  { id: 1, name: 'Apertura', tag: 'aper' },
+  { id: 2, name: 'Problematización', tag: 'prob' },
+  { id: 3, name: 'Información', tag: 'info' }
+  ])
+
+quizes = Quiz.create([
+  { level_id: 1, question: '¿Qué te parece todo esto?' },
+  { level_id: 1, question: 'Aquí hay algo más...' },
+  { level_id: 2, question: '¿y esto que tal?' }
+  ])

@@ -59,14 +59,14 @@ body {
 .gravatar{
 	width:60px;
 	display: block;
-	padding:5px;
-	border: 1px solid #999;
+	padding:2px;
+	border: 1px solid #BBB;
 	-webkit-transform: rotate(-3deg);
 	-moz-transform: rotate(-3deg);
 	transform: rotate(-3deg);
-	-moz-box-shadow: 2px 2px 2px 1px #888;
-	-webkit-box-shadow: 2px 2px 2px 1px #888;
-	box-shadow: 2px 2px 2px 1px #888; 
+	-moz-box-shadow: 2px 2px 2px 1px #DDD;
+	-webkit-box-shadow: 2px 2px 2px 1px #DDD;
+	box-shadow: 2px 2px 2px 1px #DDD; 
 	-moz-transition:all 200ms; 
 	-webkit-transition:all 200ms; 
 	transition:all 200ms;
@@ -77,8 +77,8 @@ body {
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	transform: rotate(0deg);
-	-moz-box-shadow: 1px 1px 1px 0px #888;
-	-webkit-box-shadow: 1px 1px 1px 0px #888;
-	box-shadow: 1px 1px 1px 0px #888;
+	-moz-box-shadow: 1px 1px 1px 0px #DDD;
+	-webkit-box-shadow: 1px 1px 1px 0px #DDD;
+	box-shadow: 1px 1px 1px 0px #DDD;
 }
 

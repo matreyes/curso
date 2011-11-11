@@ -1,0 +1,21 @@
+<div class="content">
+
+	<div class="page-header">
+		<h1><%= @level.name %></h1>
+	</div>
+
+	<div class="row">
+
+		<div class="span10">
+			
+				<%= @quiz.question %>
+				<%= render 'form' %>
+				
+		</div>
+
+		<div class="span4">
+			<div class="gravatar"><%= gravatar_image_tag 'matreyes@gmail.com', gravatar: {size: 60} %></div>
+		</div>
+		
+	</div>
+</div>

@@ -34,3 +34,4 @@ end
 
 gem 'gravatar_image_tag'
 gem 'twitter-bootstrap-rails'
+gem 'bcrypt-ruby', '~> 3.0.0'

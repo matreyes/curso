@@ -1,1 +1,5 @@
 <h1> NADA AÚN </h1>
+<%= form_for [@quiz, @answer] do |f| %>
+  <%= f.text_area :answer %>
+	<%= f.submit "Submit", :disable_with => 'Enviando...' %>
+<% end %>

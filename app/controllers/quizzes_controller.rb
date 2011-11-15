@@ -7,6 +7,7 @@ class QuizzesController < ApplicationController
 
     def show
       @answer ||= @quiz.answers.new 
+      @next_quiz = @level.quizzes.next(@quiz).first
     end
     
     

@@ -1,13 +1,14 @@
-<div id="modal-from-dom" class="modal hide fade">
+<div id="modal-from-dom" class="modal hide">
 	<div class="modal-header">
-		<a href="#" class="close">&times;</a>
-		<h3>Modal Heading</h3>
+		<a href="#" class="close">x</a>
+		<h3>Muy bien</h3>
 	</div>
 	<div class="modal-body">
-		<p>One fine body…</p>
+		<p>Pronto revisaremos su respuesta.</p>
 	</div>
+	<% if @next_quiz %>
 	<div class="modal-footer">
-		<a href="#" class="btn primary">Primary</a>
-		<a href="#" class="btn secondary">Secondary</a>
+		<%= link_to "Siguiente", level_quiz_path(@level, @next_quiz), class: "btn primary" %>
 	</div>
+	<% end %>
 </div>

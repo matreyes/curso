@@ -79,3 +79,9 @@ body {
 	box-shadow: 1px 1px 1px 0px #DDD;
 }
 
+#alert{
+	z-index: 100000;
+	position:absolute;
+	top:0px;
+}
+

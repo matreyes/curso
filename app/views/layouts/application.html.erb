@@ -13,6 +13,15 @@
 	</header>
 	
 	<div class="container">
+		
+		<div id="alert" class="span14">
+			<% if notice %>
+				<p class="alert-message success"><%= notice %></p>
+			<% elsif alert %>
+	    	<p class="alert-message warning"><%= alert %></p>
+			<% end %>
+		</div>
+    
 		<%= yield %>
 	
 	<footer>

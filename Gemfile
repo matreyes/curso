@@ -34,6 +34,6 @@ end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'gravatar_image_tag'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
+gem 'annotate', '~>2.4.1.beta1'

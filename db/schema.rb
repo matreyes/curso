@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111203113) do
+ActiveRecord::Schema.define(:version => 20111117210714) do
 
   create_table "answers", :force => true do |t|
     t.integer  "quiz_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111111203113) do
     t.text     "question"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "instant_feedback"
   end
 
 end

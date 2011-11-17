@@ -1,5 +1,7 @@
 Cursouno::Application.routes.draw do
   
+  root :to => "levels#index"
+  
   resources :levels do
     resources :quizzes
   end

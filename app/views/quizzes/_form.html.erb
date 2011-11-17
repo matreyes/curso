@@ -1,4 +1,4 @@
 <%= form_for [@quiz, @answer], remote: true do |f| %>
   <%= f.text_area :answer, class: 'span9' %><br><br>
-	<%= f.submit "Submit", :disable_with => 'Enviando...', class: 'btn success span9' %>
+	<%= f.submit "Enviar respuesta", :disable_with => 'Enviando...', class: 'btn success span9', style:'margin-left:5px' %>
 <% end %>

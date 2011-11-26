@@ -13,6 +13,9 @@
 class Answer < ActiveRecord::Base
   belongs_to :quiz
   
-  validates :answer, :presence => true  
+  validates :answer, :presence => true
+  
+  scope :answered_by, lambda { |p| where(user_id: p.id).order("updated_at DESC") }
+    
   
 end

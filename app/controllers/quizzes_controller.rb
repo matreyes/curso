@@ -24,7 +24,7 @@ class QuizzesController < ApplicationController
       end
       
       def find_answer
-        @answer = @quiz.answers.first
+        @answer = @quiz.answers.answered_by(current_user).first
       end
 
 end

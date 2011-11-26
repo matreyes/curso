@@ -14,7 +14,12 @@ levels = Level.create([
   ])
 
 quizes = Quiz.create([
-  { level_id: 1, question: '¿Qué te parece todo esto?' },
-  { level_id: 1, question: 'Aquí hay algo más...' },
-  { level_id: 2, question: '¿y esto que tal?' }
+  { level_id: 1, question: '¿Qué te parece todo esto?', instant_feedback: 'recuerda que te tienes que portar bien' },
+  { level_id: 1, question: 'Aquí hay algo más...', instant_feedback: 'súper' },
+  { level_id: 2, question: '¿y esto que tal?', instant_feedback: 'Muy bien' }
+  ])
+  
+users = User.create([
+  { id: 1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234'},
+  { id: 1, name: 'Usuario', email: 'user@mail.com', password: '1234', password_confirmation: '1234'},
   ])

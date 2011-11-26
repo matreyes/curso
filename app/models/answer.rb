@@ -13,5 +13,6 @@
 class Answer < ActiveRecord::Base
   belongs_to :quiz
   
+  validates :answer, :presence => true  
   
 end

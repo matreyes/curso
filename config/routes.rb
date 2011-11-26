@@ -1,5 +1,7 @@
 Cursouno::Application.routes.draw do
   
+  devise_for :users
+
   root :to => "levels#index"
   
   resources :levels do

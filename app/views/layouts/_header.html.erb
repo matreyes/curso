@@ -11,14 +11,17 @@
 					<% end %>
 				<% end %>
 			</ul>
-			
-			
-			<form action="" class="pull-right">
-				<input class="input-small" type="text" placeholder="rut">
-				<input class="input-small" type="password" placeholder="contraseña">
-				<button class="btn" type="submit">Ingresar</button>
-			</form>
-			
+			<% if user_signed_in? %>
+				<div class="pull-right logged">
+					<%= current_user.email %> <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+				</div>
+			<% else %>
+				<%= form_for "user", :url => user_session_path, :html => { class: "pull-right" } do |f| %>
+				  <%= f.email_field :email, class: "input-small", placeholder: "rut" %>
+				  <%= f.password_field :password, class: "input-small", placeholder: "contraseña" %>
+					<%= button_tag "Ingresar", class: "btn" %>
+				<% end %>
+			<% end %>
 			
 		</div>
 	</div>

@@ -79,9 +79,19 @@ body {
 	box-shadow: 1px 1px 1px 0px #DDD;
 }
 
-#alert{
-	z-index: 100000;
-	position:absolute;
-	top:0px;
+#flash_messages{
+	z-index: 10000;
+	position: fixed;
+	margin:0 auto;
+	margin-top: 50px;
+	margin-left: -5px;
 }
 
+
+.logged{
+	color:#FFF;
+	margin-top:10px;
+	a{
+		color:#BFBFBF;
+	}
+}

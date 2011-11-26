@@ -10,8 +10,8 @@
 //= require_tree .
 
 $(document).ready(function(){
-
-	$('#alert').delay(1800).animate({ 
-	        top: "-=50px"
-	      });
+	$("body").click(function(){
+		$("#flash_messages").fadeOut();
+	})
 });
+

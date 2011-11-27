@@ -19,10 +19,7 @@ quizes = Quiz.create([
   { level_id: 2, question: '¿y esto que tal?', instant_feedback: 'Muy bien' }
   ])
   
-admin = User.new(id: 1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234')
-admin.is_admin = true
-admin.save!
-
-user1 = User.new(id: 2, name: 'Usuario', email: 'user@mail.com', password: '1234', password_confirmation: '1234')
-user1.tutor_id = 1
-user1.save!
+users = User.create([
+  { id: 1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234'},
+  { id: 1, name: 'Usuario', email: 'user@mail.com', password: '1234', password_confirmation: '1234'},
+  ])

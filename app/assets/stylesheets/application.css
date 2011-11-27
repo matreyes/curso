@@ -1,7 +1,7 @@
 /*
  *= require twitter/bootstrap
  *= require_self
- *= require levels 
+ *= require_tree . 
 */
 
 html, body {

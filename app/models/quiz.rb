@@ -15,5 +15,13 @@ class Quiz < ActiveRecord::Base
   has_many :answers
   
   scope :next, lambda { |p| {:conditions => ["id > ?", p.id], :limit => 1, :order => "id"} }
+  
+  def resolved(user)
+    if self.answers.where(user_id: user).empty? 
+      true
+    else
+      false
+    end
+  end
 
 end

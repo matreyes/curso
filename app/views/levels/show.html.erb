@@ -9,7 +9,7 @@
 		<div class="span10">
 				
 				<%= render @level.tag rescue nil  %>
-				<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn" if @level.quizzes.first %>
+				<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary" if @level.quizzes.first %>
 		</div>
 
 		<div class="span4">

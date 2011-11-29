@@ -1,12 +1,5 @@
 # coding: UTF-8
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 levels = Level.create([
   { id: 1, name: 'Apertura', tag: 'aper' },
   { id: 2, name: 'Problematización', tag: 'prob' },
@@ -19,7 +12,8 @@ quizes = Quiz.create([
   { level_id: 2, question: '¿y esto que tal?', instant_feedback: 'Muy bien' }
   ])
   
-users = User.create([
-  { id: 1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234'},
-  { id: 1, name: 'Usuario', email: 'user@mail.com', password: '1234', password_confirmation: '1234'},
-  ])
+admin = User.new(id:1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234')
+admin.is_admin = true
+admin.save
+
+user = User.create(id: 2, name: 'Usuario', email: 'user@mail.com', password: '1234', password_confirmation: '1234', tutor_id: 1)

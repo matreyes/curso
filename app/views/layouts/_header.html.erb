@@ -1,13 +1,17 @@
 <div class="topbar">
 	<div class="fill">
 		<div class="container">
-			<%= link_to "Pasa", levels_path, class: 'brand' %>
+			<%= link_to "Pasa", root_path, class: 'brand' %>
 			<ul class="nav">
-				<% @levels.each do |level| %>
-					<% if level == @level %>
-					<li class="active"><%= link_to level.name, level %></li>
-					<% else %>
-					<li><%= link_to level.name, level %></li>
+				<% if current_user%>
+					<% @levels.each do |level| %>
+						<% if level.id <= current_user.current_level %>
+							<% if level == @level %>
+							<li class="active"><%= link_to level.name, level %></li>
+							<% else %>
+							<li><%= link_to level.name, level %></li>
+							<% end %>
+						<% end %>
 					<% end %>
 				<% end %>
 			</ul>
@@ -17,7 +21,7 @@
 				</div>
 			<% else %>
 				<%= form_for "user", :url => user_session_path, :html => { class: "pull-right" } do |f| %>
-				  <%= f.email_field :email, class: "input-small", placeholder: "rut" %>
+				  <%= f.email_field :email, class: "input-small", placeholder: "email" %>
 				  <%= f.password_field :password, class: "input-small", placeholder: "contraseña" %>
 					<%= button_tag "Ingresar", class: "btn" %>
 				<% end %>

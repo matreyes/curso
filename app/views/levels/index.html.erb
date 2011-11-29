@@ -9,7 +9,16 @@
 		<div class="span10">
 			<h1>El Curso</h1>
 		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+			<% if current_user %>
+				<% if current_user.current_level > 0 %>
+					<%= link_to "Continuar", level_path(current_user.current_level), class: "btn primary" %>
+				<% else %>
+				  <%= link_to "Comenzar", level_path(1), class: "btn primary"%>
+				<% end %>
+			<% end %>
+	
 		</div>
+	
 		<div class="span4">
 			<h2>Materiales</h2>
 			

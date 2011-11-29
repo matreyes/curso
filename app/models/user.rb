@@ -30,5 +30,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_level, :tutor_id
+  
+  def set_current_level(level)
+    if level == current_level+1 
+      self.update_attributes(current_level: level)
+    end
+    
+  end
+  
+  
 end

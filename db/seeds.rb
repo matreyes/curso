@@ -3,7 +3,9 @@
 levels = Level.create([
   { id: 1, name: 'Apertura', tag: 'aper' },
   { id: 2, name: 'Problematización', tag: 'prob' },
-  { id: 3, name: 'Información', tag: 'info' }
+  { id: 3, name: 'Información', tag: 'info' },
+  { id: 4, name: 'Aplicación', tag: 'aplic' },
+  { id: 5, name: 'Cierre', tag: 'cierr' },
   ])
 
 quizes = Quiz.create([

@@ -37,6 +37,11 @@ body {
 	margin: -20px -20px 20px;
 }
 
+/*alert message tweaks*/
+.alert-message {
+	margin-bottom: 0px;
+}
+
 /* Styles you shouldn't keep as they are for displaying this base example only */
 .content .span10,
 .content .span4 {
@@ -82,10 +87,18 @@ body {
 #flash_messages{
 	z-index: 10000;
 	position: fixed;
-	margin:0 auto;
-	margin-top: 50px;
+	float: right;
+	bottom: 10px;
+	margin-right: -10px;
 	margin-left: -5px;
+	-moz-box-shadow: 2px 2px 2px 0px #6E6E6E;
+	-webkit-box-shadow: 2px 2px 2px 0px #6E6E6E;
+	box-shadow: 2px 2px 2px 0px #6E6E6E;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
+
 
 
 .logged{
@@ -94,4 +107,8 @@ body {
 	a{
 		color:#BFBFBF;
 	}
+}
+
+label{
+	margin-right:10px;
 }

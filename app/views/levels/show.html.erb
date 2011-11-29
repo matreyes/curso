@@ -1,7 +1,17 @@
 <div class="content">
 
+
 	<div class="page-header">
-		<h1><%= @level.name %></h1>
+		<div class="row">
+			<div class="span10">
+				<h1><%= @level.name %></h1>
+			</div>
+			<% if tutor_block %>
+				<div class="span4">
+					<h4>Su tutor(a) es: <%= tutor_block %></h4>
+				</div>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="row">
@@ -9,7 +19,12 @@
 		<div class="span10">
 				
 				<%= render @level.tag rescue nil  %>
-				<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary" if @level.quizzes.first %>
+			
+				<% if @level.quizzes.first %>
+					<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary"  %>
+				<% elsif @next_level %>
+					<%= link_to "Siguente Nivel", level_path(@next_level), class: "btn primary"   %>
+				<% end %>
 		</div>
 
 		<div class="span4">

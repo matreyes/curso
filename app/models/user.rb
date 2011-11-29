@@ -24,15 +24,20 @@
 #
 
 class User < ActiveRecord::Base
+  
+  has_many :participants, class_name: 'User'
+  belongs_to :tutor, class_name: 'User'
+  
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_level, :tutor_id
-  
-  def set_current_level(level)
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_level, :tutor_id, :passport, :name, :surname
+    
+  def set_current_level(level)                                                                         
     if level == current_level+1 
       self.update_attributes(current_level: level)
     end

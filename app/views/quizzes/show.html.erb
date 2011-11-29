@@ -1,38 +1,49 @@
 <div class="content">
 
 	<div class="page-header">
-		<h1><%= @level.name %></h1>
+		<div class="row">
+			<div class="span10">
+				<h1><%= @level.name %></h1>
+			</div>
+			<% if tutor_block %>
+				<div class="span4">
+					<h4>Su tutor(a) es: <%= tutor_block %></h4>
+				</div>
+			<% end %>
+		</div>
 	</div>
 
-	<div class="row">
+	<div class="central-content">
+		<div class="row">
 
-		<div class="span10">
-				<h3><%= @quiz.question %></h3><br>
-				<%= render 'form' %>	
-		</div>
+			<div class="span10">
+					<h3><%= @quiz.question %></h3><br>
+					<%= render 'form' %>	
+			</div>
 		
-		<div class="span4">
-			<h3>Preguntas</h3><br>
-			<ul id="quizzes-list">
-			<% @level.quizzes.each do |q| %>
-				<% if q.resolved(current_user.id) %>
-					<% if q == @quiz %>
-						<li><a href='javascript:void(null);' class='quiz-link current'><%= q.question.truncate(30) %></a></li>
-					<%else%>
-						<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link' %></li>
-					<% end %>
-				<% else %>
-			  	<% if q == @quiz %>
-						<li><a href='javascript:void(null);' class='quiz-link current ready'><%= q.question.truncate(30) %></a></li>
-					<%else%>
-						<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link ready' %></li>
+			<div class="span4">
+				<h3>Preguntas</h3><br>
+				<ul id="quizzes-list">
+				<% @level.quizzes.each do |q| %>
+					<% if q.resolved(current_user.id) %>
+						<% if q == @quiz %>
+							<li><a href='javascript:void(null);' class='quiz-link current'><%= q.question.truncate(30) %></a></li>
+						<%else%>
+							<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link' %></li>
+						<% end %>
+					<% else %>
+				  	<% if q == @quiz %>
+							<li><a href='javascript:void(null);' class='quiz-link current ready'><%= q.question.truncate(30) %></a></li>
+						<%else%>
+							<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link ready' %></li>
+						<% end %>
 					<% end %>
 				<% end %>
-			<% end %>
 			
-			</ul>
-		</div>
+				</ul>
+			</div>
 		
+		</div>
 	</div>
 
 </div>

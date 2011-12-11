@@ -1,0 +1,22 @@
+<div class="content">
+	
+	<div class="page-header">
+		<div class="row">
+		<div class="span10">
+			<h1>Foro: <%= @topic.name %></h1>
+		</div>
+		<% if tutor_block %>
+		<div class="span4">
+			<h4>Su tutor(a) es: <%= tutor_block %></h4>
+		</div>
+		<% end %>
+		</div>
+	</div>
+
+<div class="row">
+	<%= render @comments %>
+</div>
+
+<%= will_paginate @comments %>
+
+</div>

@@ -14,6 +14,20 @@ quizes = Quiz.create([
   { level_id: 2, question: '¿y esto que tal?', instant_feedback: 'Muy bien' }
   ])
   
+topics = Topic.create([
+  { name: "tema1", abstract: "este es el tema 1"},
+  { name: "tema2", abstract: "este es el tema 2"}
+  ])  
+comments = Comment.create([
+  { topic_id: 1, user_id: 1, text: "texto 1 del tema 1"},
+  { topic_id: 1, user_id: 2, text: "texto 2 del tema 1"},
+  { topic_id: 1, user_id: 1, text: "texto 3 del tema 1"},
+  { topic_id: 2, user_id: 2, text: "texto 1 del tema 2"},
+  { topic_id: 2, user_id: 2, text: "texto 2 del tema 1"}
+  ])
+
+  
+  
 admin = User.new(id:1, name: 'Administrador', email: 'admin@mail.com', password: '1234', password_confirmation: '1234')
 admin.is_admin = true
 admin.save

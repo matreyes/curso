@@ -11,6 +11,10 @@ Cursouno::Application.routes.draw do
   resources :quizzes do
     resources :answers
   end
+  
+  resources :topics do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

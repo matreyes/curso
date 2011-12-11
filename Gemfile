@@ -38,3 +38,4 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'annotate', '~>2.4.1.beta1'
 
+gem 'will_paginate'

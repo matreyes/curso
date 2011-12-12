@@ -235,5 +235,10 @@ es:
 
       full_messages:
         format: "%{attribute} %{message}"
+    
+  will_paginate:
+    next_label: "siguiente"
+    previous_label: "anterior"
+    
 
 

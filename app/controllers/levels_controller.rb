@@ -1,7 +1,8 @@
 class LevelsController < ApplicationController
   
   before_filter :authenticate_user!, except: 'index'
- 
+  before_filter :check_level
+  
   def show
     @level = Level.find(params[:id])
     @next_level = Level.next(@level).first
@@ -11,6 +12,13 @@ class LevelsController < ApplicationController
   def index
   end
 
+  private
+  
+  def check_level
+    if params[:id].to_i > current_user.current_level+1
+      redirect_to level_path(current_user.current_level)
+    end
+  end 
 
 
 end

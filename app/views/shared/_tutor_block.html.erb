@@ -1,0 +1,5 @@
+<% if current_user && current_user.tutor %>
+	<div class="span4">
+		<h4>Su tutor(a) es: <div class="tutor"><%= image_tag current_user.tutor.avatar.thumb.url, width: 50 %> <%= current_user.tutor.name %> </div></h4>
+	</div>
+<% end %>

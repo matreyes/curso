@@ -1,0 +1,21 @@
+Avatar -> tutor y foro
+mail al tutor (block tutor)
+Comentarios -> Administrador y usuario pueden eliminar
+						-> agregar fecha
+						-> truncar en index
+						-> agregar nombre, foto
+
+Administración	-> lista de usuarios con respuestas efectuadas 
+								-> lista de respuestas por usuario
+							  -> marcar usuario como chequeado -> con fecha para saber si ha corregido
+								-> mandar mails a usuarios por batch y c/u
+								-> Usuarios 
+								
+Registro  -> confirmar rut por csv
+					-> agregar campo Active a Usuarios
+
+Test
+
+Si hay tiempo -> preguntas de opciones
+
+Deploy

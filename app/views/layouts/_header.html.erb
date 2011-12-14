@@ -36,7 +36,7 @@
 			</ul>
 			<% if user_signed_in? %>
 				<div class="pull-right logged">
-					<%= current_user.email %> <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+					<%= image_tag(current_user.avatar.thumb.url, height: 20)+" "+current_user.email %> <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
 				</div>
 			<% else %>
 				<%= form_for "user", :url => user_session_path, :html => { class: "pull-right" } do |f| %>

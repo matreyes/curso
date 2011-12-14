@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   has_many :participants, class_name: 'User'
   belongs_to :tutor, class_name: 'User'
   
+  mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -35,7 +36,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_level, :tutor_id, :passport, :name, :surname
+  attr_accessible :email, :password, :password_confirmation, :remember_me, 
+                  :current_level, :tutor_id, :passport, :name, :surname, :avatar
     
   def set_current_level(level)                                                                         
     if level == current_level+1 

@@ -1,7 +1,7 @@
 class LevelsController < ApplicationController
   
   before_filter :authenticate_user!, except: 'index'
-  before_filter :check_level
+  before_filter :check_level, only: 'show' 
   
   def show
     @level = Level.find(params[:id])

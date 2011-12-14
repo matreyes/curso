@@ -37,5 +37,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'annotate', '~>2.4.1.beta1'
-
+gem 'rmagick'
 gem 'will_paginate'
+
+gem 'carrierwave'

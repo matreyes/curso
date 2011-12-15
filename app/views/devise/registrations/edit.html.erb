@@ -1,8 +1,8 @@
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h2>Editar Usuario</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }, :multipart => true) do |f| %>
   <%= devise_error_messages! %>
-
+<br>
   <div><%= f.label :email %>
   <%= f.email_field :email %></div>
 <br>
@@ -14,7 +14,17 @@
 <br><br>
   <div><%= f.label :current_password, "Contraseña acutal" %>
   <%= f.password_field :current_password %></div>
-<br><br>
+<br>
+	
+	<div>
+		<%= image_tag current_user.avatar.thumb.url, width: 50 %>
+		<%= f.label :avatar, "Agregar una imagen" %>
+		<%= f.file_field :avatar, class: "span6" %>	
+	</div>
+	<br>
+
+
+<br>
   <div><%= f.submit "Actualizar", class: "btn primary" %></div>
 <% end %>
 

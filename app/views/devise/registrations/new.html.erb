@@ -15,17 +15,18 @@
 	</div>
 	<br>
 	
-	<div>
-		<%= f.label :avatar, "Agregar una imagen" %>
-		<%= f.file_field :avatar %>	
-	</div>
-	<br>
-	
   <div>
 		<%= f.label :password_confirmation %>
 	  <%= f.password_field :password_confirmation %>
 	</div>
-	<br><br>
+	<br>
+	<br>
+	<div>
+		<%= f.label :avatar, "Agregar una imagen" %>
+		<%= f.file_field :avatar, class: "span6" %>	
+	</div>
+	<br>
+	<br>
   <div><%= f.submit "Sign up", class: "btn primary" %></div>
 <% end %>
 

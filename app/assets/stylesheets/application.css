@@ -58,30 +58,12 @@ body {
 	border: 0;
 }
 
-.gravatar{
-	width:60px;
-	display: block;
-	padding:2px;
-	border: 1px solid #BBB;
-	-webkit-transform: rotate(-3deg);
-	-moz-transform: rotate(-3deg);
-	transform: rotate(-3deg);
-	-moz-box-shadow: 2px 2px 2px 1px #DDD;
-	-webkit-box-shadow: 2px 2px 2px 1px #DDD;
-	box-shadow: 2px 2px 2px 1px #DDD; 
-	-moz-transition:all 200ms; 
-	-webkit-transition:all 200ms; 
-	transition:all 200ms;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+input{
+	-webkit-transform-style: flat;
 }
-.gravatar:hover{
-	-webkit-transform: rotate(0deg);
-	-moz-transform: rotate(0deg);
-	transform: rotate(0deg);
-	-moz-box-shadow: 1px 1px 1px 0px #DDD;
-	-webkit-box-shadow: 1px 1px 1px 0px #DDD;
-	box-shadow: 1px 1px 1px 0px #DDD;
+
+input[type="file"]{
+	background-color:transparent;
 }
 
 #flash_messages{
@@ -99,14 +81,15 @@ body {
 	border-radius: 4px;
 }
 
-
-
 .logged{
 	color:#FFF;
 	margin-top:10px;
 	a{
 		color:#BFBFBF;
 	}
+}
+.logged-avatar{
+	padding:5px;	
 }
 
 label{

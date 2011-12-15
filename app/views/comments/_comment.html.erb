@@ -1,6 +1,9 @@
 <div class="well span9">
 	<div class="topic-header">
-		<h4><%= comment.user_name %></h4>	
+		<h4><%= comment.name %></h4><br>
+		<%= image_tag comment.avatar.thumb.url, width: 50 %>	
 	</div>
-	<%= comment.text %>
+	<%= simple_format(comment.text) %>
+	
+	<span>hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
 </div>

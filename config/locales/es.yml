@@ -232,6 +232,10 @@ es:
         taken: "ya está en uso"
         record_invalid: "La validación falló: %{errors}"
         <<: *errors_messages
+       
+        carrierwave_processing_error: 'No se pudo reducir la imagen.'
+        carrierwave_integrity_error: 'No es una imagen.'
+
 
       full_messages:
         format: "%{attribute} %{message}"

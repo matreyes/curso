@@ -1,9 +1,11 @@
-Avatar -> tutor y foro
-mail al tutor (block tutor)
-Comentarios -> Administrador y usuario pueden eliminar
-						-> agregar fecha
-						-> truncar en index
-						-> agregar nombre, foto
+Avatar -> tutor y foro OK
+
+Mail al tutor
+
+Comentarios -> Administrador y usuario pueden eliminar comentarios
+						-> agregar fecha OK 
+						-> truncar comentarios en index
+						-> agregar nombre, foto OK
 
 Administración	-> lista de usuarios con respuestas efectuadas 
 								-> lista de respuestas por usuario
@@ -11,11 +13,14 @@ Administración	-> lista de usuarios con respuestas efectuadas
 								-> mandar mails a usuarios por batch y c/u
 								-> Usuarios 
 								
-Registro  -> confirmar rut por csv
+Registro  -> editar sign_up y edit: agregar campos passport y nombres
+					-> confirmar rut por csv
 					-> agregar campo Active a Usuarios
 
 Test
 
 Si hay tiempo -> preguntas de opciones
 
-Deploy
+Deployar!!!
+
+

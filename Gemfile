@@ -1,11 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
+gem 'jquery-rails'
+gem 'unicorn'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'twitter-bootstrap-rails'
+gem 'devise'
+gem 'rmagick'
+gem 'will_paginate'
+gem 'carrierwave'
 
 
 # Gems used only for assets and not required
@@ -16,28 +20,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
-# Use unicorn as the web server
-gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+group :development do
+  gem "capistrano"
+  gem 'annotate', '~>2.4.1.beta1'
 end
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+group :test do
+  gem "rspec"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "mocha"
+  gem "selenium"
+  gem "selenium-client"
+  gem "launchy"
+  gem "selenium-webdriver", "~> 2.10.0"
+  gem "email_spec"
+end
 
-gem 'twitter-bootstrap-rails'
-gem 'devise'
-gem 'annotate', '~>2.4.1.beta1'
-gem 'rmagick'
-gem 'will_paginate'
-
-gem 'carrierwave'
+group :development, :test do
+  gem "rspec-rails"
+  gem "steak"
+end

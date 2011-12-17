@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = 'Comentario enviado'
     else
-      flash[:alert] = "Ha ocurrido un error enviar el comentario"
+      flash[:alert] = "Ha ocurrido un error al enviar el comentario"
     end
     redirect_to topic_comments_path(@topic)
   end

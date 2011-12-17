@@ -10,7 +10,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
   config.mock_with :mocha
-
+  config.include Curso::Factories
   config.include EmailSpec::Helpers
   config.include EmailSpec::Matchers
 

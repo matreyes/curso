@@ -3,7 +3,15 @@
 		<h4><%= comment.name %></h4><br>
 		<%= image_tag comment.avatar.thumb.url, width: 50 %>	
 	</div>
-	<%= simple_format(comment.text) %>
+	
+	<div class="on">
+	  <%= simple_format(truncate(comment.text, :length => 300, :omission => '... ' + link_to('Ver más +', '#', :class => 'view_full_comment'))) %>
+	</div>
+	<div class="off" style="display:none">
+	  <%= simple_format(comment.text) %>
+	  <p><%= link_to("Esconder", '#', :class => 'view_full_comment') %></p>
+	</div>
+	
 	
 	<span>hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
 	

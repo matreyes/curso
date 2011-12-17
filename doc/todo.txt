@@ -2,9 +2,9 @@ Avatar -> tutor y foro OK
 
 Mail al tutor
 
-Comentarios -> Administrador y usuario pueden eliminar comentarios
+Comentarios -> Administrador y usuario pueden eliminar comentarios OK
 						-> agregar fecha OK 
-						-> truncar comentarios en index
+						-> truncar comentarios en index OK
 						-> agregar nombre, foto OK
 
 Administración	-> lista de usuarios con respuestas efectuadas 

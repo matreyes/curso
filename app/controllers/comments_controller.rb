@@ -17,6 +17,18 @@ class CommentsController < ApplicationController
     end
     redirect_to topic_comments_path(@topic)
   end
+  
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.can_be_removed_by?(current_user)
+      @comment.destroy
+      flash[:notice] = "Comentario eliminado correctamente"
+    else
+      flash[:alert] = "No puedes eliminar este comentario"
+    end
+    redirect_to topic_comments_path(@comment.topic)
+  end
+  
   private
   
   def set_topic

@@ -20,5 +20,7 @@ class Comment < ActiveRecord::Base
   # will_paginate method
   self.per_page = 20
 
-  
+  def can_be_removed_by?(user)
+    self.user == user || user.is_admin?
+  end
 end

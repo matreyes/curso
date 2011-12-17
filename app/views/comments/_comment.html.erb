@@ -6,4 +6,8 @@
 	<%= simple_format(comment.text) %>
 	
 	<span>hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
+	
+	<% if comment.can_be_removed_by?(current_user) %>
+	  <%= link_to("Eliminar comentario", topic_comment_path(@topic, comment), :class => 'remove_comment', :method => :delete, :confirm => '¿Estás seguro?') %>
+	<% end %>
 </div>

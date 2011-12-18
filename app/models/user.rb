@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :participants, class_name: 'User'
   belongs_to :tutor, class_name: 'User'
   
+  scope :participant, where(is_admin: false)
+  
   mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
@@ -38,7 +40,14 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
                   :current_level, :tutor_id, :passport, :name, :surname, :avatar
-    
+  
+  # will_paginate
+  self.per_page = 20
+  
+  def to_s
+    "#{name} #{surname}"
+  end
+  
   def set_current_level(level)                                                                         
     if level == current_level+1 
       self.update_attributes(current_level: level)

@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
     @levels = Level.all
   end
   
-
+  def user_is_admin
+    if authenticate_user!
+      unless current_user.is_admin?
+        redirect_to root_path and return false
+      end
+    end
+  end
   
 end

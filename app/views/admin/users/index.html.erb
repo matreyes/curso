@@ -1,0 +1,16 @@
+<br><br>
+<table border="0" cellspacing="5" cellpadding="5">
+	<thead>
+		<tr>
+			<th>Avatar</th>
+			<th>CI</th>
+			<th>Nombre</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @users %>
+	</tbody>
+</table>
+
+<%= will_paginate @users, class: "digg_pagination" %>

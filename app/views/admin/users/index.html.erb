@@ -1,4 +1,10 @@
-<br><br>
+<div class="content">
+<br>
+<ul class="tabs">
+  <li <%= 'class="active"'.html_safe if params[:view_all].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path) %></li>
+  <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true)) %></li>
+</ul>
+
 <table border="0" cellspacing="5" cellpadding="5">
 	<thead>
 		<tr>
@@ -17,3 +23,4 @@
 </table>
 
 <%= will_paginate @users, class: "digg_pagination" %>
+</div>

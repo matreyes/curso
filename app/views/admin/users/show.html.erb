@@ -1,6 +1,7 @@
-<br><br><br>
 
-<p><%= link_to("☜ Volver al listado", admin_users_path) %></p>
+<div class="content">
+<br>
+<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
 
 <div class="lista-preguntas">
 	<ul>
@@ -21,5 +22,6 @@
 </div>
 
 <% if @answers.compact.any? %>
-	<p><%= link_to("☜ Volver al listado", admin_users_path) %></p>
+	<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
 <% end %>
+</div>

@@ -1,0 +1,25 @@
+<br><br><br>
+
+<p><%= link_to("☜ Volver al listado", admin_users_path) %></p>
+
+<div class="lista-preguntas">
+	<ul>
+		<% @quizzes.each_with_index do |quiz, i| %>
+		<li><%= link_to_unless(@answers[i].nil?, quiz.question, "#q-#{quiz.id}")%></li>
+		<% end %>
+	</ul>
+</div> 
+
+<div class="preguntas">
+<% @answers.compact.each do |answer| %>
+	<div id="q-<%= answer.quiz.id %>" class="well">
+		<h4><%= answer.quiz.question %></h4>
+		<%= simple_format(answer.answer) %>
+	</div>
+<% end %>
+	
+</div>
+
+<% if @answers.compact.any? %>
+	<p><%= link_to("☜ Volver al listado", admin_users_path) %></p>
+<% end %>

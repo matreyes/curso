@@ -9,7 +9,8 @@ Comentarios -> Administrador y usuario pueden eliminar comentarios OK
 
 Administración	-> Usuarios OK
 								-> lista de usuarios con respuestas efectuadas OK
-								-> lista de respuestas por usuario
+								-> lista de respuestas por usuario OK
+								-> filtrar tus alumnos
 							  -> marcar usuario como chequeado -> con fecha para saber si ha corregido
 								-> mandar mails a usuarios por batch y c/u
 								-> definir administradores

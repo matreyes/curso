@@ -7,4 +7,6 @@
 	<% Quiz.all.each do |q| %>
 		<td><%= quiz_answer(q, user) %></td>
 	<% end %>
+	
+	<td><%= link_to "Ver respuestas", admin_user_path(user) %></td>
 </tr>

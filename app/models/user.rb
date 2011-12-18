@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   self.per_page = 20
   
   def to_s
-    "#{name} #{surname}"
+    [surname, name].compact.join(", ")
   end
   
   def set_current_level(level)                                                                         

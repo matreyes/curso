@@ -16,17 +16,22 @@ Administración	-> Usuarios OK
 							  -> Chequear y enviar email OK
 								-> Buscar usuario OK
 								
-Registro  -> editar sign_up y edit: agregar campos passport y nombres
-					-> confirmar rut por csv 
-					-> definir administrador en CSV
-					-> agregar campo Active a Usuarios
+Registro  -> definir administrador en CSV OK
+					-> confirmar rut por csv OK
+					
+					-> editar sign_up y edit: agregar campos passport y nombres -> Matías
+					-> validar passport (sin puntos)
+					-> agregar campo Active a Usuarios o versión
 					
 
 Test
 
-Si hay tiempo -> preguntas de opciones
+Deployar!!!
+
+
+Si hay tiempo -> + Topics si es admin -> Matías
+							-> preguntas de opciones
 							-> mandar mails a usuarios por batch y c/u
 							
-Deployar!!!
 
 

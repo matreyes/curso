@@ -7,8 +7,8 @@ Comentarios -> Administrador y usuario pueden eliminar comentarios OK
 						-> truncar comentarios en index OK
 						-> agregar nombre, foto OK
 
-Administración	-> Usuarios
-								-> lista de usuarios con respuestas efectuadas 
+Administración	-> Usuarios OK
+								-> lista de usuarios con respuestas efectuadas OK
 								-> lista de respuestas por usuario
 							  -> marcar usuario como chequeado -> con fecha para saber si ha corregido
 								-> mandar mails a usuarios por batch y c/u

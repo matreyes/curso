@@ -6,6 +6,9 @@
 			<th>CI</th>
 			<th>Nombre</th>
 			<th>Email</th>
+			<% Quiz.all.each do |q| %>
+				<th>Q <%= q.id %></th>
+			<% end %>
 		</tr>
 	</thead>
 	<tbody>

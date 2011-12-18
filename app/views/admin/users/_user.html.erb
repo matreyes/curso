@@ -3,4 +3,8 @@
 	<td><%= user.passport %></td>
 	<td><%= user %></td>
 	<td><%= user.email %></td>
+	
+	<% Quiz.all.each do |q| %>
+		<td><%= quiz_answer(q, user) %></td>
+	<% end %>
 </tr>

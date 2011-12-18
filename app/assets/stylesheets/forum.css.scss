@@ -1,0 +1,30 @@
+.topic{
+	a{
+		color:#404040;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+	.well{
+ 		transition: 500ms;
+		-moz-transition: 500ms;
+		-webkit-transition: 500ms;
+		-o-transition: 500ms;
+	}
+	.well:hover{
+		background-color: #F6FFD0;
+	}
+	h4{
+		border-bottom: 1px solid #999;
+		margin-bottom:20px;
+	}
+}
+.comment{
+	.comment-header{
+		float: left;
+		margin-right:20px;
+	}
+	.remove_comment{
+		float: right;
+	}
+}

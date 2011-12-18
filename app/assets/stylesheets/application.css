@@ -58,7 +58,7 @@ body {
 	border: 0;
 }
 
-input{
+input, textarea{
 	-webkit-transform-style: flat;
 }
 
@@ -88,6 +88,7 @@ input[type="file"]{
 		color:#BFBFBF;
 	}
 }
+
 .logged-avatar{
 	padding:5px;	
 }

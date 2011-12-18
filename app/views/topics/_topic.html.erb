@@ -1,6 +1,6 @@
-<div class="well span10">
-	<div class="topic-header">
-		<h4><%= link_to topic.name, topic_comments_path(topic) %></h4>	
-	</div>
-	<%= topic.abstract %>
+<div class="span10 topic">
+<%= link_to raw('<div class="well">' +
+		"<h4>#{topic.name}</h4>" +	
+	"#{topic.abstract}" +
+'</div>'), topic_comments_path(topic) %>
 </div>

@@ -1,21 +1,18 @@
-<div class="well span9">
-	<div class="topic-header">
-		<h4><%= comment.name %></h4><br>
-		<%= image_tag comment.avatar.thumb.url, width: 50 %>	
+<div class="comment well span12">
+	<div class="comment-header span2">
+		<%= image_tag comment.avatar.thumb.url, width: 60 %>
+		<strong><%= comment.name %></strong><br>
+		<span class="label">Hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
 	</div>
+	<% if comment.can_be_removed_by?(current_user) %>
+	  <%= link_to("Eliminar", topic_comment_path(@topic, comment), :class => 'remove_comment', :method => :delete, :confirm => '¿Estás seguro?') %>
+	<% end %>
 	
 	<div class="on">
-	  <%= simple_format(truncate(comment.text, :length => 300, :omission => '... ' + link_to('Ver más +', '#', :class => 'view_full_comment'))) %>
+	  <%= simple_format(truncate(comment.text, :length => 800, :omission => '... ' + link_to('Ver más +', '#', :class => 'view_full_comment'))) %>
 	</div>
 	<div class="off" style="display:none">
 	  <%= simple_format(comment.text) %>
 	  <p><%= link_to("Esconder", '#', :class => 'view_full_comment') %></p>
 	</div>
-	
-	
-	<span>hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
-	
-	<% if comment.can_be_removed_by?(current_user) %>
-	  <%= link_to("Eliminar comentario", topic_comment_path(@topic, comment), :class => 'remove_comment', :method => :delete, :confirm => '¿Estás seguro?') %>
-	<% end %>
 </div>

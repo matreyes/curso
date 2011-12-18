@@ -10,7 +10,7 @@ If someone is wants to fork go ahead.
 
 ***
 
-author: [@matias_reyes](http://twitter.com/#!/matias_reyes)
+authors: [@matias_reyes](http://twitter.com/#!/matias_reyes) and [@ferblape](http://twitter.com/#!/ferblape)
 
 
 ***
@@ -19,8 +19,4 @@ You can try it with user: user@mail.com, password: 1234
 
 ***
 
-Sorry, but it is in spanish
-
-***
-
-> "Special thanks to [@ferblape](http://twitter.com/#!/ferblape)"
+Sorry, but it's in spanish

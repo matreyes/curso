@@ -12,6 +12,8 @@ Administración	-> Usuarios OK
 								-> lista de respuestas por usuario OK
 								-> filtrar tus alumnos OK
 							  -> marcar usuario como chequeado -> con fecha para saber si ha corregido
+							  -> marcar respuestas modificadas posteriormente a chequeo
+							  -> Chequear y enviar email
 								-> mandar mails a usuarios por batch y c/u
 								-> definir administradores
 								 

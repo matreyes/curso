@@ -24,4 +24,10 @@
 <% if @answers.compact.any? %>
 	<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
 <% end %>
+
+<%= form_for [:admin, @user] do |f| %>
+  <%= f.submit "Chequear como revisado", class: "btn" %>
+<% end %>
+
+
 </div>

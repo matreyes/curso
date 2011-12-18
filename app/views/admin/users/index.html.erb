@@ -1,7 +1,14 @@
 <div class="content">
 <br>
+
+<div class="pull-right">
+	<%= form_tag admin_users_path, method: :get do %>
+	  <%= search_field_tag :q, params[:q], placeholder: "Buscar" %>
+	<% end %>
+</div>
+<br>
 <ul class="tabs">
-  <li <%= 'class="active"'.html_safe if params[:view_all].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path) %></li>
+  <li <%= 'class="active"'.html_safe if params[:view_all].nil? && params[:q].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path) %></li>
   <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true)) %></li>
 </ul>
 

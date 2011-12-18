@@ -29,6 +29,14 @@ class User < ActiveRecord::Base
   belongs_to :tutor, class_name: 'User'
   
   scope :participant, where(is_admin: false)
+  scope :search, lambda { |q| 
+    conditions = []
+    conditions << "name like '%#{q}%'"
+    conditions << "surname like '%#{q}%'"
+    conditions << "email like '%#{q}%'"
+    conditions << "passport like '%#{q}%'"
+    where('(' + conditions.join(" OR ") + ')') 
+  }
   
   mount_uploader :avatar, AvatarUploader
   

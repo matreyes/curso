@@ -21,13 +21,18 @@
 	
 </div>
 
-<% if @answers.compact.any? %>
-	<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
-<% end %>
-
 <%= form_for [:admin, @user] do |f| %>
+	<%= label_tag :subject, "Asunto" %><br>
+	<%= text_field_tag :subject, "Revisión de respuestas" %><br><br>
+	
+	<%= label_tag :body, "Mensaje" %><br>
+	<%= text_area_tag :body, nil, rows: 10, cols: 80 %><br>
+	
   <%= f.submit "Chequear como revisado", class: "btn" %>
 <% end %>
 
+<% if @answers.compact.any? %>
+	<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
+<% end %>
 
 </div>

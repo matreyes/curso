@@ -19,6 +19,9 @@ class Admin::UsersController < AdminController
     @user = User.find(params[:id])
     @user.checked_at = Time.now
     if @user.save
+      unless params[:body].blank?
+        AdminMailer.send_review(current_user, @user, params[:subject], params[:body]).deliver
+      end
       redirect_to session[:back_to]
       flash[:notice] = "Has marcado al usuario como revisado"
     else

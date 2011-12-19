@@ -24,9 +24,9 @@
 	<%= text_field_tag :subject, "Revisión de respuestas" %><br><br>
 	
 	<%= label_tag :body, "Mensaje" %><br>
-	<%= text_area_tag :body, nil, rows: 10, cols: 80 %><br>
-	
-  <%= f.submit "Chequear como revisado", class: "btn" %>
+	<%= text_area_tag :body, nil, rows: 10, class: "span8" %><br>
+	<br>
+  <div class="row"><%= f.submit "Chequear / Enviar", class: "btn info offset1" %></div>
 <% end %>
 
 <% if @answers.compact.any? %>

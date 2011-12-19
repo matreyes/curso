@@ -1,6 +1,4 @@
-<div class="content">
 <br>
-
 <div class="pull-right">
 	<%= form_tag admin_users_path, method: :get do %>
 	  <%= search_field_tag :q, params[:q], placeholder: "Buscar" %>
@@ -30,4 +28,3 @@
 </table>
 
 <%= will_paginate @users, class: "digg_pagination" %>
-</div>

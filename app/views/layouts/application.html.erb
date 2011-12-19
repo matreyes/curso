@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cursouno</title>
+  <title>24+5</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
-	
+
 	<header>
 		<%= render 'layouts/header'%>
 	</header>
@@ -18,16 +17,17 @@
   </div>
 	
 	<div class="container">
-	
-		<%= yield %>
-	
-	<footer>
-    <p>&copy; PASA 2011<br>
-		  Desarrollado por <a href="http://twitter.com/#!/matias_reyes" style="color:#404040">@matias_reyes</p>
-  </footer>
-	
+		
+		<div class="content">
+			<%= yield %>
+		</div>
+
+		<footer>
+	    	<p>
+	    		&copy; PASA 2011<br>
+			  	Desarrollado por <a href="http://twitter.com/#!/matias_reyes" style="color:#404040">@matias_reyes
+			</p>
+		</footer>
 	</div>
-	
-	
 </body>
 </html>

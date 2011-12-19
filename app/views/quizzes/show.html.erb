@@ -1,46 +1,43 @@
-<div class="content">
-
-	<div class="page-header">
-		<div class="row">
-			<div class="span10">
-				<h1><%= @level.name %></h1>
-			</div>
-			<%= render 'shared/tutor_block' %>
+<div class="page-header">
+	<div class="row">
+		<div class="span10">
+			<h1><%= @level.name %></h1>
 		</div>
+		<%= render 'shared/tutor_block' %>
 	</div>
+</div>
 
-	<div class="central-content">
-		<div class="row">
+<div class="central-content">
+	<div class="row">
 
-			<div class="span10">
-					<h3><%= @quiz.question %></h3><br>
-					<%= render 'form' %>	
-			</div>
-		
-			<div class="span4">
-				<h3>Preguntas</h3><br>
-				<ul id="quizzes-list">
-				<% @level.quizzes.each do |q| %>
-					<% if q.resolved(current_user.id) %>
-						<% if q == @quiz %>
-							<li><a href='javascript:void(null);' class='quiz-link current'><%= q.question.truncate(30) %></a></li>
-						<%else%>
-							<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link' %></li>
-						<% end %>
-					<% else %>
-				  	<% if q == @quiz %>
-							<li><a href='javascript:void(null);' class='quiz-link current ready'><%= q.question.truncate(30) %></a></li>
-						<%else%>
-							<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link ready' %></li>
-						<% end %>
+		<div class="span10">
+				<h3><%= @quiz.question %></h3><br>
+				<%= render 'form' %>	
+		</div>
+	
+		<div class="span4">
+			<h3>Preguntas</h3><br>
+			<ul id="quizzes-list">
+			<% @level.quizzes.each do |q| %>
+				<% if q.resolved(current_user.id) %>
+					<% if q == @quiz %>
+						<li><a href='javascript:void(null);' class='quiz-link current'><%= q.question.truncate(30) %></a></li>
+					<%else%>
+						<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link' %></li>
+					<% end %>
+				<% else %>
+			  	<% if q == @quiz %>
+						<li><a href='javascript:void(null);' class='quiz-link current ready'><%= q.question.truncate(30) %></a></li>
+					<%else%>
+						<li><%= link_to q.question.truncate(20), level_quiz_path(@level,q), class: 'quiz-link ready' %></li>
 					<% end %>
 				<% end %>
-			
-				</ul>
-			</div>
+			<% end %>
 		
+			</ul>
 		</div>
+	
 	</div>
-
 </div>
+	
 <%= render 'modal' %>

@@ -1,30 +1,25 @@
-<div class="content">
-
-
-	<div class="page-header">
-		<div class="row">
-			<div class="span10">
-				<h1><%= @level.name %></h1>
-			</div>
-				<%= render 'shared/tutor_block' %>
+<div class="page-header">
+	<div class="row">
+		<div class="span10">
+			<h1><%= @level.name %></h1>
 		</div>
+			<%= render 'shared/tutor_block' %>
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="span10">
+			
+			<%= render @level.tag rescue nil  %>
+		
+			<% if @level.quizzes.first %>
+				<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary"  %>
+			<% elsif @next_level %>
+				<%= link_to "Siguente Nivel", level_path(@next_level), class: "btn primary"   %>
+			<% end %>
 	</div>
 
-	<div class="row">
-
-		<div class="span10">
-				
-				<%= render @level.tag rescue nil  %>
-			
-				<% if @level.quizzes.first %>
-					<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary"  %>
-				<% elsif @next_level %>
-					<%= link_to "Siguente Nivel", level_path(@next_level), class: "btn primary"   %>
-				<% end %>
-		</div>
-
-		<div class="span4">
-		</div>
-		
+	<div class="span4">
 	</div>
 </div>

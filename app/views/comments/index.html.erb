@@ -1,13 +1,11 @@
-<div class="content">
-	
-	<div class="page-header">
-		<div class="row">
-		<div class="span10">
-			<h1><%= link_to "Foro: ", topics_path, class: "reset_color" %> <%= @topic.name %></h1>
-		</div>
-			<%= render 'shared/tutor_block' %>
-		</div>
+<div class="page-header">
+	<div class="row">
+	<div class="span10">
+		<h1><%= link_to "Foro: ", topics_path, class: "reset_color" %> <%= @topic.name %></h1>
 	</div>
+		<%= render 'shared/tutor_block' %>
+	</div>
+</div>
 
 <div class="row">
 	<div class="span10">
@@ -23,5 +21,3 @@
 </div>
 
 <%= will_paginate @comments, class: "digg_pagination" %>
-
-</div>

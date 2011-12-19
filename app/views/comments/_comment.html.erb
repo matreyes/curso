@@ -1,8 +1,8 @@
 <div class="comment well span12">
-	<div class="comment-header span2">
-		<%= image_tag comment.avatar.thumb.url, width: 60 %>
+	<div class="comment-header">
+		<%= image_tag comment.avatar.thumb.url, width: 60 %><br>
 		<strong><%= comment.name %></strong><br>
-		<span class="label">Hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
+		<span class="time-ago">Hace <%= distance_of_time_in_words_to_now(comment.created_at) %></span><br>
 	</div>
 	<% if comment.can_be_removed_by?(current_user) %>
 	  <%= link_to("Eliminar", topic_comment_path(@topic, comment), :class => 'remove_comment', :method => :delete, :confirm => '¿Estás seguro?') %>

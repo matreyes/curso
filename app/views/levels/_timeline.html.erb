@@ -1,0 +1,33 @@
+<div class="well span9 withot-background">
+<h4>Estado de avance:</h4>
+<br>
+<table border="0" class="timeline">
+	<tr>
+	<% @levels.each do |l| %>
+		<% if l.id <= current_user.current_level %>
+			<td width="20%" class="line-right"><strong><%= link_to l.name, level_path(l) %></strong></td>
+		<% else %>
+			<td width="20%" class="untouched line-right"><strong><%= l.name %></strong></td>
+		<% end %>  	
+	<% end %>
+	</tr>
+	<tr>
+	<% @levels.each do |l| %>
+			<td class="line-right">
+				<table border="0">
+					<tr>
+						<% l.quizzes.each do |q| %>
+							<td style="text-align:center;"><%= quiz_answer(l, q, current_user) %></td>
+						<% end %>
+					</tr>
+				</table>
+			</td>
+	<% end %>
+	</tr>
+
+</table>
+<br>
+	<span class="label">Pi</span> = Sin respuesta<br>
+	<span class="label warning">Pi</span> = Respondido, esperando revisión<br>
+	<span class="label success">Pi</span> = Revisado<br>
+</div>

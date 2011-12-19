@@ -34,3 +34,39 @@
 	
 }
 
+.timeline{
+	width:100%;
+	border-left: 1px solid #EEE;	
+	font-size: 85%;
+	
+	a{
+		text-decoration: none;
+		color: #404040;
+	}
+	
+	table{
+		margin:0px;
+	}
+	
+	.line-right{
+		border-right: 1px solid #EEE;
+	}
+	
+	td{	
+		padding: 0px;
+		text-align:center;
+		border-top: 0px;
+	}
+	
+	.untouched{
+		color:#C3C3C3;
+	}
+	
+}
+.withot-background{
+	background-color: transparent;
+	-webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+

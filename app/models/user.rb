@@ -30,8 +30,10 @@ require 'csv'
 
 class User < ActiveRecord::Base
   
-  CSV_URL = "https://docs.google.com/spreadsheet/pub?hl=es&hl=es&key=0Apc-qBdqkJwVdGJMUXpRYS00RTdZZVU3cTN0VWc2YVE&single=true&gid=0&output=csv"
-  
+  CSV_URL = "https://docs.google.com/spreadsheet/" + 
+  "pub?hl=es&hl=es&key=0Apc-qBdqkJwVdGJMUXpRYS00RTdZZVU3cTN0VWc2YVE&single=true&gid=0&output=csv"
+    
+
   has_many :participants, class_name: 'User'
   belongs_to :tutor, class_name: 'User'
   

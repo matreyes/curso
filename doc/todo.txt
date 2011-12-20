@@ -3,25 +3,26 @@ Avatar -> tutor y foro OK
 Mail al tutor
 
 Comentarios -> Administrador y usuario pueden eliminar comentarios OK
-						-> agregar fecha OK 
-						-> truncar comentarios en index OK
-						-> agregar nombre, foto OK
+            -> agregar fecha OK
+            -> truncar comentarios en index OK
+            -> agregar nombre, foto OK
 
-Administración	-> Usuarios OK
-								-> lista de usuarios con respuestas efectuadas OK
-								-> lista de respuestas por usuario OK
-								-> filtrar tus alumnos OK
-							  -> marcar usuario como chequeado -> con fecha para saber si ha corregido OK
-							  -> marcar respuestas modificadas posteriormente a chequeo OK
-							  -> Chequear y enviar email OK
-								-> Buscar usuario OK
-								
+Administración  -> Usuarios OK
+                -> lista de usuarios con respuestas efectuadas OK
+                -> lista de respuestas por usuario OK
+                -> filtrar tus alumnos OK
+                -> marcar usuario como chequeado -> con fecha para saber si ha corregido OK
+                -> marcar respuestas modificadas posteriormente a chequeo OK
+                -> Chequear y enviar email OK
+                -> Buscar usuario OK
+
 Registro  -> definir administrador en CSV OK
-					-> confirmar rut por csv OK
-					-> editar sign_up y edit: agregar campos passport y nombres -> Matías OK
-					-> validar passport (sin puntos)
-					-> agregar campo Active a Usuarios o Versión
-					
+          -> confirmar rut por csv OK
+          -> editar sign_up y edit: agregar campos passport y nombres -> Matías OK
+          -> validar passport (sin puntos) OK
+          -> agregar campo Active a Usuarios o Versión OK
+          -> Pantalla de tutores
+
 
 Test
 
@@ -29,8 +30,8 @@ Deployar!!!
 
 
 Si hay tiempo -> + Topics si es admin -> Matías
-							-> preguntas de opciones
-							-> mandar mails a usuarios por batch y c/u
-							
+              -> preguntas de opciones
+              -> mandar mails a usuarios por batch y c/u
+
 
 

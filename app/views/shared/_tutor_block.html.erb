@@ -1,5 +1,28 @@
 <% if current_user && current_user.tutor %>
 	<div class="span4">
-		<h4>Su tutor(a) es: <div class="tutor"><%= image_tag current_user.tutor.avatar.thumb.url, width: 50 %> <span class="tutor-name"><%= current_user.tutor %></span> </div></h4>
+		<h4>Su tutor(a) es: 
+		<div class="tutor">
+		<a data-controls-modal="mail-modal" data-backdrop="static">
+			<%= image_tag current_user.tutor.avatar.thumb.url, width: 50, class: "tutor-image" %> 
+			<p><%= current_user.tutor %></p>
+			<p><%= image_tag 'envelope.png', width: 15 %></p>
+		</a>
+		</div></h4>
 	</div>
+
+	<div id="mail-modal" class="modal hide fade in">
+	<div class="modal-header">
+		<a href="#" class="close">x</a>
+		<h5>Envio de mensaje</h5>
+	</div>
+	<div class="modal-body">
+	<p>Para: <%= current_user.tutor %> &lt;<%= current_user.tutor.email %>&gt;</p>
+		<textarea></textarea>
+	</div>
+	<div class="modal-footer">
+		<%= link_to "Enviar", "#", class: "btn primary" %>
+	</div>
+
+</div>
+
 <% end %>

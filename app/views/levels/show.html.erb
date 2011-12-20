@@ -12,12 +12,14 @@
 	<div class="span10">
 			
 			<%= render @level.tag rescue nil  %>
-		
-			<% if @level.quizzes.first %>
-				<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn primary"  %>
-			<% elsif @next_level %>
-				<%= link_to "Siguente Nivel", level_path(@next_level), class: "btn primary"   %>
-			<% end %>
+			<br>
+			<center>
+				<% if @level.quizzes.first %>
+					<%= link_to "Ir a Ejercicios", level_quiz_path(@level, @level.quizzes.first), class: "btn large primary span13"  %>
+				<% elsif @next_level %>
+					<%= link_to "Siguente Nivel", level_path(@next_level), class: "btn large primary span9"   %>
+				<% end %>
+			</center>
 	</div>
 
 	<div class="span4">

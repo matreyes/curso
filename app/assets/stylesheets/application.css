@@ -43,24 +43,21 @@ body {
 	margin-bottom: 0px;
 }
 
-/* Styles you shouldn't keep as they are for displaying this base example only */
-.central-content .span10,
-.central-content .span4 {
-	min-height: 500px;
-}
-/* Give a quick and non-cross-browser friendly divider */
-.content .span4 {
+.content .side {
 	margin-left: 0;
 	padding-left: 19px;
-	border-left: 1px solid #eee;
+}
+
+.content .left-content{
+	border-right: 1px solid #eee;
 }
 
 .topbar .btn {
 	border: 0;
 }
 
-input, textarea{
-	-webkit-transform-style: flat;
+input, textarea, .modal{
+	-webkit-transform-style: flat !important;
 }
 
 input[type="file"]{
@@ -106,10 +103,24 @@ header .field_with_errors{
 	font-size: 100%;
 }
 
-.tutor img{
+.tutor{
+	height:50px;
+	padding-top:0px;
+	cursor: pointer;
+}
+.tutor-image{
   float: left;
 }
-.tutor-name{
-	font-size: 90%;
-	margin-left: 10px;
+.tutor p{
+	font-size: 15px;
+	font-weight: bold;
+	margin-left:60px;
+	line-height:10px;
+}
+
+.btn{
+	text-align:center !important;
+}
+.modal textarea{
+	width:520px;
 }

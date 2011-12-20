@@ -6,7 +6,7 @@
 		<% if !current_user %>
 			<div class="pull-right">
 				<%= link_to "¿Olvidó su contraseña?", new_user_password_path %><br>
-				<%= link_to "¿Usuario nuevo?", new_user_registration_path %>
+				<%= link_to "¿Usuario nuevo?", new_user_registration_path, class: "label important" %>
 			</div>
 		<% end %>
 	
@@ -17,30 +17,42 @@
 <div class="central-content">
 	<div class="row">
 
-		<div class="span10">
-			<h1>El Curso</h1>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+		<div class="span10 left-content">
 			
-
-
 			<% if current_user %>
-
-
-				<% if current_user.current_level > 0 %>
-					<%= link_to "Continuar", level_path(current_user.current_level), class: "btn primary" %>
-				<% else %>
-				  <%= link_to "Comenzar", level_path(1), class: "btn primary"%>
-				<% end %>
 				
-				<br><br>
 				<%= render "timeline" %>
+				<br>
+				
+				<% if current_user.current_level > 0 %>
+					<%= link_to "Continuar", level_path(current_user.current_level), 
+						class: "btn danger large span9" %>
+				<% else %>
+				  	<%= link_to "Comenzar", level_path(1), class: "btn danger large span9"%>
+				<% end %>
 
+			<br><br><br>
 			<% end %>
 
+			<h2>Introducción</h2>
+			<br>
+				<iframe src="http://player.vimeo.com/video/5239013?title=0&amp;byline=0&amp;portrait=0" width="550" height="310" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<br>
+			<br>
 		</div>
 
-		<div class="span4">
-			<h2>Materiales</h2>			
+		<div class="span4 side">
+			<h2>Recursos</h2><br>
+			<table class="stuff">
+				<% if current_user %>
+					<tr><td><%= image_tag 'groups.png' %></td>
+					<td><h5><%= link_to 'Foros', topics_path %></h5></td></tr>
+				<% end %>
+				<tr><td><%= image_tag 'suitcase.png' %></td><td><h5>Unidad de aprendizaje</h5></td></tr>
+				<tr><td><%= image_tag 'presentation.png' %></td><td><h5>Diapositivas</h5></td></tr>
+			</table>	
+
+			<br><br><br>
 		</div>
 		
 	</div>

@@ -5,7 +5,7 @@
 	<td><%= user.email %></td>
 	
 	<% Quiz.all.each do |q| %>
-		<td><%= admin_quiz_answer(q, user) %></td>
+		<td><%= no_link_quiz_answer(q, user) %></td>
 	<% end %>
 	
 	<td><%= link_to "Ver respuestas", admin_user_path(user) %></td>

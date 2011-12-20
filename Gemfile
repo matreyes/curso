@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'unicorn'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -40,4 +39,5 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem "steak"
+  gem 'sqlite3'
 end

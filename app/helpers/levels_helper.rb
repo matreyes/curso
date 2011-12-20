@@ -8,7 +8,7 @@ module LevelsHelper
     else
       if !user.checked_at.blank? && user.checked_at > answer.updated_at
         # OK
-        levellink_to "<span class='label success'>P#{quiz.id}</span>".html_safe, level_quiz_path(level, quiz)
+        link_to "<span class='label success'>P#{quiz.id}</span>".html_safe, level_quiz_path(level, quiz)
       else
         # Waiting for feedback
         link_to "<span class='label warning'>P#{quiz.id}</span>".html_safe, level_quiz_path(level, quiz)

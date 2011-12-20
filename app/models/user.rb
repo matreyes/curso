@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
 
   has_many :participants, class_name: 'User'
   belongs_to :tutor, class_name: 'User'
+  validates_presence_of :passport, :name, :surname
+  validates_uniqueness_of :passport, :email
   
   scope :participant, where(is_admin: false)
   scope :search, lambda { |q| 

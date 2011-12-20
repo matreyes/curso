@@ -181,6 +181,7 @@ es:
     format: "%{attribute} %{message}"
 
     messages: &errors_messages
+      extension_white_list_error: "la imagen debe ser .jpg o .png y pesar menos de 2mb"
       inclusion: "no está incluido en la lista"
       exclusion: "está reservado"
       invalid: "no es válido"
@@ -216,6 +217,7 @@ es:
             email: "Email"
             password: "Contraseña"
             password_confirmation: "Confirmación de contraseña"
+            current_password: "Contraseña actual"
             name: "Nombre"
             surname: "Apellido"
             passport: "RUT"
@@ -235,7 +237,6 @@ es:
        
         carrierwave_processing_error: 'No se pudo reducir la imagen.'
         carrierwave_integrity_error: 'No es una imagen.'
-
 
       full_messages:
         format: "%{attribute} %{message}"

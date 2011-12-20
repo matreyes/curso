@@ -6,10 +6,10 @@
 		text-decoration:none;
 	}
 	.well{
- 		transition: 500ms;
-		-moz-transition: 500ms;
-		-webkit-transition: 500ms;
-		-o-transition: 500ms;
+		transition: 1s;
+		-moz-transition: 1s;
+		-webkit-transition: 1s;
+		-o-transition: 1s;
 	}
 	.well:hover{
 		background-color: #F6FFD0;
@@ -21,10 +21,22 @@
 }
 .comment{
 	.comment-header{
+		width:130px;
+		text-align: center;
 		float: left;
 		margin-right:20px;
+		border-right: 1px solid #CCC;
+		padding: 10px 10px 10px 0;
 	}
 	.remove_comment{
 		float: right;
 	}
+	.time-ago{
+		font-size: 70%;
+		color: #649AFF;
+	}
+	
+
 }
+
+

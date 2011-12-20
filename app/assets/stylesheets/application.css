@@ -4,6 +4,7 @@
  *= require_tree . 
 */
 
+
 html, body {
 	background-color: #eee !important;
 }
@@ -99,4 +100,8 @@ label{
 
 header .field_with_errors{
 		display: inline;
+}
+
+#error_explanation h2{
+	font-size: 100%;
 }

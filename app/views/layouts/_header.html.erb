@@ -43,7 +43,7 @@
 			</ul>
 			<% if user_signed_in? %>
 				<div class="pull-right logged">
-					<%= current_user.email %> <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+					<%= link_to current_user.email, edit_user_registration_path %> <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
 				</div>
 				<%= image_tag current_user.avatar.thumb.url, height: 30, class: "logged-avatar pull-right" %>
 			<% else %>

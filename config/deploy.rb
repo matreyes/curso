@@ -12,14 +12,17 @@ set :repository, "git://github.com/matreyes/curso.git"
 ssh_options[:forward_agent] = true
 set :keep_releases, 5
 
-set :server, '190.54.16.190'
-
+set :deploy_server, '190.54.16.190'
 set :user,  'pasa'
 set :port, "22"
 
 set(:deploy_to){
   "/home/pasa/curso"
 }
+
+role :app, deploy_server
+role :web, deploy_server
+role :db,  deploy_server, :primary => true
 
 before "db:setup", "deploy:update_code", "bundle:install"
 after "deploy:update_code", :symlinks

@@ -18,6 +18,7 @@ Cursouno::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    get '/tutors' => "users#index_tutors", as: :tutors_list
   end
 
 end

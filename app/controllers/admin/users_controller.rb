@@ -15,6 +15,10 @@ class Admin::UsersController < AdminController
     session[:back_to] = admin_users_path(params.slice(:page, :view_all, :q, :version))
   end
   
+  def index_tutors
+    @users = User.order('surname DESC').where(:is_admin => true)
+  end  
+  
   def show
     @user = User.find(params[:id])
     @quizzes = Quiz.all 

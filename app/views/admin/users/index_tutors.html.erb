@@ -1,0 +1,22 @@
+
+<br><br>
+<table border="0" cellspacing="5" cellpadding="5">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Avatar</th>
+			<th>Nombre</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |u| %>
+			<tr>
+				<td><%= u.id %></td>
+				<td><%= image_tag u.avatar.thumb.url, width: 30 %></td>
+				<td><%= u %></td>
+				<td><%= u.email %></td>
+			</tr>
+		<% end %>	
+	</tbody>
+</table>

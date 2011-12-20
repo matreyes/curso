@@ -1,4 +1,6 @@
-<p>
+
+<p><%= link_to "Tutores", admin_tutors_list_path %></p>
+<p>	
 	<strong>Versión <%= params[:version] %></strong> · 
 	Otras versiones: 
  	<%= User.versions.map do |version|

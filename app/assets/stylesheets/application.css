@@ -105,3 +105,11 @@ header .field_with_errors{
 #error_explanation h2{
 	font-size: 100%;
 }
+
+.tutor img{
+  float: left;
+}
+.tutor-name{
+	font-size: 90%;
+	margin-left: 10px;
+}

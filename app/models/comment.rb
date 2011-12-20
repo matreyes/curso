@@ -15,7 +15,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :text
 
-  delegate :name, :avatar, to: :user
+  delegate :name, :avatar, :is_admin, to: :user
   
   # will_paginate method
   self.per_page = 20

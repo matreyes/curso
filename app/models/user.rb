@@ -69,10 +69,19 @@ class User < ActiveRecord::Base
     [surname, name].compact.join(", ")
   end
   
+  def passport=(p)
+    p = p.tr ".", ""
+    super p
+  end
+
   def set_current_level(level)                                                                         
     if level == current_level+1 
       self.update_attributes(current_level: level)
     end
+  end
+  
+  def self.versions
+    select(:version).all.map(&:version).uniq.compact
   end
   
   private
@@ -86,6 +95,7 @@ class User < ActiveRecord::Base
         found = true
         self.tutor_id = row[1]
         self.is_admin = row[2] == '1' ? true : false
+        self.version = row[3].to_i
       end
     end
     unless found

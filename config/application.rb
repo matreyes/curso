@@ -52,3 +52,5 @@ module Cursouno
 
 
 end
+
+VERSION = 2

@@ -1,3 +1,11 @@
+<p>
+	<strong>Versión <%= params[:version] %></strong> · 
+	Otras versiones: 
+ 	<%= User.versions.map do |version|
+		link_to_unless params[:version].to_i == version, version, admin_users_path(:version => version)
+	end.join(", ").html_safe %>
+</p>
+
 <br>
 <div class="pull-right">
 	<%= form_tag admin_users_path, method: :get do %>
@@ -6,8 +14,8 @@
 </div>
 <br>
 <ul class="tabs">
-  <li <%= 'class="active"'.html_safe if params[:view_all].nil? && params[:q].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path) %></li>
-  <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true)) %></li>
+  <li <%= 'class="active"'.html_safe if params[:view_all].nil? && params[:q].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path(:version => params[:version])) %></li>
+  <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true, :version => params[:version])) %></li>
 </ul>
 
 <table border="0" cellspacing="5" cellpadding="5">

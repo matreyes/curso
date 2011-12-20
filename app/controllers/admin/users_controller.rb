@@ -1,8 +1,9 @@
 class Admin::UsersController < AdminController
   
   def index
+    params[:version] ||= VERSION
     
-    @users = User.participant.page(params[:page]).order('surname DESC')
+    @users = User.participant.page(params[:page]).order('surname DESC').where(:version => params[:version])
     
     if params[:q]
       @users = @users.search(params[:q])
@@ -11,7 +12,7 @@ class Admin::UsersController < AdminController
         @users = @users.where(:tutor_id => current_user.id)
       end
     end
-    session[:back_to] = admin_users_path(params.slice(:page, :view_all, :q))
+    session[:back_to] = admin_users_path(params.slice(:page, :view_all, :q, :version))
   end
   
   def show

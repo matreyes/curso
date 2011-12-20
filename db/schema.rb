@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218211203) do
+ActiveRecord::Schema.define(:version => 20111220224142) do
 
   create_table "answers", :force => true do |t|
     t.integer  "quiz_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20111218211203) do
     t.integer  "current_level",                         :default => 0
     t.string   "avatar"
     t.datetime "checked_at"
+    t.integer  "version"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

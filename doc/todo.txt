@@ -18,10 +18,9 @@ Administración	-> Usuarios OK
 								
 Registro  -> definir administrador en CSV OK
 					-> confirmar rut por csv OK
-					
-					-> editar sign_up y edit: agregar campos passport y nombres -> Matías
+					-> editar sign_up y edit: agregar campos passport y nombres -> Matías OK
 					-> validar passport (sin puntos)
-					-> agregar campo Active a Usuarios o versión
+					-> agregar campo Active a Usuarios o Versión
 					
 
 Test

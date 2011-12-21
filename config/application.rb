@@ -53,4 +53,4 @@ module Cursouno
 
 end
 
-VERSION = 2
+VERSION = 1

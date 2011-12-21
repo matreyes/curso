@@ -18,9 +18,17 @@
 #  surname                :string(255)
 #  tutor_id               :integer
 #  is_admin               :boolean         default(FALSE)
-#  current_level          :integer
 #  created_at             :datetime
 #  updated_at             :datetime
+#  current_level          :integer         default(0)
+#  avatar                 :string(255)
+#  checked_at             :datetime
+#  version                :integer
+#
+# Indexes
+#
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

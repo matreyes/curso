@@ -9,3 +9,15 @@ two:
   name: MyString
   abstract: MyText
   position: 1
+# == Schema Information
+#
+# Table name: topics
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  abstract   :text
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

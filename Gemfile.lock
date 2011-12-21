@@ -34,6 +34,8 @@ GEM
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    bullet (2.1.0)
+      uniform_notifier (~> 1.0.0)
     capistrano (2.9.0)
       highline
       net-scp (>= 1.0.0)
@@ -209,6 +211,7 @@ GEM
       kgio (~> 2.4)
       rack
       raindrops (~> 0.6)
+    uniform_notifier (1.0.1)
     warden (1.0.6)
       rack (>= 1.0)
     will_paginate (3.0.2)
@@ -222,6 +225,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (~> 2.4.1.beta1)
   bcrypt-ruby (~> 3.0.0)
+  bullet
   capistrano
   capybara
   carrierwave

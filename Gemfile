@@ -9,7 +9,6 @@ gem 'devise'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'carrierwave'
-gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,9 +18,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'mysql2'  
+end
+
 group :development do
   gem "capistrano"
   gem 'annotate', '~>2.4.1.beta1'
+  gem "bullet"
 end
 
 group :test do

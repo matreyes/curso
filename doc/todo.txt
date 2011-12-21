@@ -21,13 +21,12 @@ Registro  -> definir administrador en CSV OK
           -> editar sign_up y edit: agregar campos passport y nombres -> Matías OK
           -> validar passport (sin puntos) OK
           -> agregar campo Active a Usuarios o Versión OK
-          -> Pantalla de tutores
+          -> Pantalla de tutores OK
 
 
 Test
 
-Deployar!!!
-
+Deployar!!! OK
 
 Si hay tiempo -> + Topics si es admin -> Matías
               -> preguntas de opciones

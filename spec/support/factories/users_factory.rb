@@ -5,6 +5,7 @@ module Curso
     def new_user(attributes = {})
       attributes = attributes.dup
       user = User.new
+      user.passport = attributes[:passport] || '12345678-0'
       user.name = attributes[:name] || String.random(5)
       user.surname = attributes[:surname] || String.random(5)
       user.email = attributes[:email] || String.random(10).downcase + '@' + String.random(5).downcase + '.com'
@@ -19,9 +20,9 @@ module Curso
       user.save
       user
     end
-    
+
     def create_admin(attributes = {})
-      create_user(attributes.merge(:is_admin => true))
+      create_user(attributes.merge(:is_admin => true, :passport => '87654321-0'))
     end
 
   end

@@ -20,5 +20,7 @@ Cursouno::Application.routes.draw do
     resources :users
     get '/tutors' => "users#index_tutors", as: :tutors_list
   end
+  
+  post '/mail' => "main#send_mail"
 
 end

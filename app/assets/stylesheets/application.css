@@ -124,3 +124,13 @@ header .field_with_errors{
 .modal textarea{
 	width:520px;
 }
+
+.tutor_img_mail{
+	margin-right:5px;
+	margin-bottom:-10px;
+}
+
+form.form-mail{
+	margin:0;
+	padding:0;	
+}

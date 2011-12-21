@@ -8,21 +8,26 @@
 			<p><%= image_tag 'envelope.png', width: 15 %></p>
 		</a>
 		</div></h4>
+	</div>			
+	<div>	
+		<div id="mail-modal" class="modal hide fade in">
+			<%= form_tag '/mail', class: "form-mail", remote: true do %>
+				<div class="modal-header">
+					<a href="#" class="close">x</a>
+					<h5>Envio de mensaje</h5>
+				</div>
+				<div class="modal-body">
+					<p>Para: 	<%= image_tag current_user.tutor.avatar.thumb.url, width: 30, class: "tutor_img_mail" %> 
+										<%= current_user.tutor %> 
+										&lt;<%= current_user.tutor.email %>&gt;</p>
+					<br>
+					<%= text_area_tag :text, nil, rows: 10 %>
+				</div>		
+				<div class="modal-footer">
+					<%= submit_tag 'Enviar', :disable_with => 'Enviando...', class: "btn primary"%>
+				</div>
+			<% end %>
+		</div>
 	</div>
-
-	<div id="mail-modal" class="modal hide fade in">
-	<div class="modal-header">
-		<a href="#" class="close">x</a>
-		<h5>Envio de mensaje</h5>
-	</div>
-	<div class="modal-body">
-	<p>Para: <%= current_user.tutor %> &lt;<%= current_user.tutor.email %>&gt;</p>
-		<textarea></textarea>
-	</div>
-	<div class="modal-footer">
-		<%= link_to "Enviar", "#", class: "btn primary" %>
-	</div>
-
-</div>
-
+		
 <% end %>

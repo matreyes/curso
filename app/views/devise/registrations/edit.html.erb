@@ -26,20 +26,20 @@
   <%= f.text_field :surname %>
 </div>
 <br>
-
-  <div><%= f.label :email %>
+<div><%= f.label :email %>
   <%= f.email_field :email %></div>
 <br>
+  <div><%= f.label :current_password, "Contraseña actual *" %>
+  <%= f.password_field :current_password %></div>
+<br>
+
   <div><%= f.label :password %>
   <%= f.password_field :password %></div>
-<br>
+  <br>
   <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 <br><br>
-  <div><%= f.label :current_password, "Contraseña acutal" %>
-  <%= f.password_field :current_password %></div>
-<br>
-	
+
 	<div>
 		<%= image_tag current_user.avatar.thumb.url, width: 50 %>
 		<%= f.label :avatar, "Cambiar imagen" %>

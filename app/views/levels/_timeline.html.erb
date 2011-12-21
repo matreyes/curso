@@ -7,9 +7,9 @@
 	<tr>
 	<% @levels.each do |l| %>
 		<% if l.id <= current_user.current_level %>
-			<td width="20%" class="line-right"><strong><%= link_to l.name, level_path(l) %></strong></td>
+			<td class="line-right"><strong><%= link_to l.name, level_path(l) %></strong></td>
 		<% else %>
-			<td width="20%" class="untouched line-right"><strong><%= l.name %></strong></td>
+			<td class="untouched line-right"><strong><%= l.name %></strong></td>
 		<% end %>  	
 	<% end %>
 	</tr>

@@ -1,3 +1,18 @@
 // Place all the styles related to the admin/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users-admin{
+	font-size: 90%;
+	td, th{
+		padding: 15px 2px 10px 2px;
+		text-align: center;
+	}
+	.mailandpassword{
+		font-size: 90%;
+		padding-top: 10px;
+	}
+}
+#users-table {
+	 overflow:auto;
+}

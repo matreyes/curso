@@ -19,22 +19,20 @@
   <li <%= 'class="active"'.html_safe if params[:view_all].nil? && params[:q].nil? %>><%= link_to("Ver a mis alumnos", admin_users_path(:version => params[:version])) %></li>
   <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true, :version => params[:version])) %></li>
 </ul>
-
-<table border="0" cellspacing="5" cellpadding="5">
-	<thead>
-		<tr>
-			<th>Avatar</th>
-			<th>CI</th>
-			<th>Nombre</th>
-			<th>Email</th>
-			<% Quiz.all.each do |q| %>
-				<th>Q <%= q.id %></th>
-			<% end %>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @users %>
-	</tbody>
-</table>
+<div id="users-table">
+	<table border="0" class="users-admin" >
+		<thead>
+			<tr>
+				<th>Avatar</th>
+				<th>mail/ci</th>
+				<th>Nombre</th>
+				<th colspan="<%= Quiz.count %>" align="center">Preguntas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render @users %>
+		</tbody>
+	</table>
+</div>
 
 <%= will_paginate @users, class: "digg_pagination" %>

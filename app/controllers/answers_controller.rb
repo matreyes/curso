@@ -9,7 +9,6 @@ class AnswersController < ApplicationController
     else
       flash.now[:alert] = 'Debe escribir una respuesta'
       render "/layouts/render_flash.js.erb"
-      
     end
   end
 

@@ -20,6 +20,10 @@
 		<div class="modal-footer">
 			<%= link_to "Siguiente nivel", level_path(@next_level), class: "btn primary" %>
 		</div>
+	<% else %>
+		<div class="modal-footer">
+			<%= link_to "Finalizar!", root_path, class: "btn primary" %>
+		</div>
 	<% end %>
 </div>
 

@@ -50,7 +50,7 @@
 	</div>
 	<br>
 	<br>
-  <div><%= f.submit "Registrar", class: "btn primary" %></div>
+  <div><%= f.submit "Registrar", disable_with: "Registrando...", class: "btn primary" %></div>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

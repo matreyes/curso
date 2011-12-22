@@ -9,41 +9,52 @@
 //= require twitter/bootstrap
 //= require_tree .
 
+
 $(document).ready(function(){
+
 	$("body").click(function(){
 		$("#flash_messages").fadeOut();
 	});
+			
 	$('.view_full_comment').on('click', function(e){
 	  var parent = $(this).parents('div.well');
 	  parent.find("div.on").toggle();
 	  parent.find("div.off").toggle();
 	  e.preventDefault(); e.stopPropagation();
 	});
-	if($('#answer_answer').val().length < 200){
-		$('#answer_answer').parents("form").find("input[type=submit]").addClass('disabled');
-	}
-	$('#answer_answer').keyup(function(e){
-		if($('#answer_answer').val().length > 200){
-			$(this).parents("form").find("input[type=submit]").removeClass('disabled');
-		}
-		if($('#answer_answer').val().length < 200){
-			$(this).parents("form").find("input[type=submit]").addClass('disabled');
-		}
-		var cl = 2000 - $(this).val().length;
-		$(this).parents("form").find("span").html(cl + " caracteres");
-		if(cl <= 0){
-			$(this).parents("form").find("span").css('color', 'red');
-		} else {
-			$(this).parents("form").find("span").css('color', 'black');
-		}
-	});
+	
+	var num = $('#answer_answer').val().length;
+	var min = 140;
+	var max = 1500;
+	var i = max-num;
+	
+	count(i,num,min);
+	
 	$('#answer_answer').keydown(function(e){
-		var cl = 2000 - $(this).val().length;
-		if(cl <= 0){
-			if(e.keyCode != 8)
-				return false;
-		}
+		var num = $('#answer_answer').val().length;
+		var min = 140;
+		var max = 1500;
+		var i = max-num;
+		count(i,num,min);
+		if(i <= 0 && e.keyCode != 8){
+			return false;
+		}	
 	});
+	
+	
+	function count(i,num,min){
+		$('#count').html(i);
+		if(num < min){
+	 		$('#answer_answer').parents("form").find("input[type=submit]").addClass('disabled').attr("disabled", true);
+		} else {
+			$('#answer_answer').parents("form").find("input[type=submit]").removeClass('disabled').attr("disabled", false);
+		}
+		if(i <= 0){
+			$('#count').css('color', 'red');
+		} else {
+			$('#count').css('color', 'black');
+		}
+	}
 
 });
 

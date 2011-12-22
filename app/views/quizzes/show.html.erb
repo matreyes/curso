@@ -18,7 +18,7 @@
 		<div class="span4">
 			<h3>Preguntas</h3><br>
 			<ul id="quizzes-list">
-			<% @level.quizzes.each do |q| %>
+			<% @level.quizzes.order("sequence ASC").each do |q| %>
 		  	<% if q == @quiz %>
 					<li><a href='javascript:void(null);' class='quiz-link current'><%= no_link_quiz_answer(q, current_user) + " " + q.question.truncate(30) %></a></li>
 				<%else%>

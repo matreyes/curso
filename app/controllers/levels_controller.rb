@@ -6,7 +6,7 @@ class LevelsController < ApplicationController
   def show
     @level = Level.find(params[:id])
     @next_level = Level.next(@level).first
-    current_user.set_current_level(@level.id)
+    current_user.set_current_level(@level.sequence)
   end
   
   def index
@@ -15,8 +15,8 @@ class LevelsController < ApplicationController
   private
   
   def check_level
-    if params[:id].to_i > current_user.current_level+1
-      redirect_to level_path(current_user.current_level)
+    if Level.find(params[:id]).sequence > current_user.current_level+1
+      redirect_to level_path(Level.where(sequence: current_user.current_level).first.id)
     end
   end 
 

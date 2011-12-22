@@ -10,9 +10,9 @@
 #
 
 class Level < ActiveRecord::Base
-  has_many  :quizzes
+  has_many  :quizzes, :order => "sequence ASC"
   validates_presence_of :tag, :name
    
-  scope :next, lambda { |p| {:conditions => ["id > ?", p.id], :limit => 1, :order => "id"} }
+  scope :next, lambda { |p| {:conditions => ["sequence > ?", p.sequence], :limit => 1, :order => "sequence"} }
    
 end

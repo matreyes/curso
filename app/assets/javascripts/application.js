@@ -19,5 +19,31 @@ $(document).ready(function(){
 	  parent.find("div.off").toggle();
 	  e.preventDefault(); e.stopPropagation();
 	});
+	if($('#answer_answer').val().length < 200){
+		$('#answer_answer').parents("form").find("input[type=submit]").addClass('disabled');
+	}
+	$('#answer_answer').keyup(function(e){
+		if($('#answer_answer').val().length > 200){
+			$(this).parents("form").find("input[type=submit]").removeClass('disabled');
+		}
+		if($('#answer_answer').val().length < 200){
+			$(this).parents("form").find("input[type=submit]").addClass('disabled');
+		}
+		var cl = 2000 - $(this).val().length;
+		$(this).parents("form").find("span").html(cl + " caracteres");
+		if(cl <= 0){
+			$(this).parents("form").find("span").css('color', 'red');
+		} else {
+			$(this).parents("form").find("span").css('color', 'black');
+		}
+	});
+	$('#answer_answer').keydown(function(e){
+		var cl = 2000 - $(this).val().length;
+		if(cl <= 0){
+			if(e.keyCode != 8)
+				return false;
+		}
+	});
+
 });
 

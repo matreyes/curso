@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_levels
   
   def load_levels
-    @levels = Level.order("sequence ASC").all
+    @levels ||= Level.order("sequence ASC").all
   end
   
   def user_is_admin

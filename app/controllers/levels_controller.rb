@@ -10,6 +10,12 @@ class LevelsController < ApplicationController
   end
   
   def index
+    user_agent =  request.env['HTTP_USER_AGENT'].downcase
+    if user_agent.index('msie')
+      @ie = true 
+    else
+      @ie = false
+    end
   end
 
   private

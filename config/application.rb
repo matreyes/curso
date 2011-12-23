@@ -2,8 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-
-
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require *Rails.groups(:assets => %w(development test))
@@ -47,10 +45,12 @@ module Cursouno
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
-  
-
-
-
 end
 
 VERSION = 1
+
+  
+config.middleware.use ExceptionNotifier,
+  :email_prefix => "[curso24] ",
+  :sender_address => %{"notifier" <curso24@pasa.cl>},
+  :exception_recipients => %w{matias.reyes@pasa.cl}

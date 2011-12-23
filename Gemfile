@@ -20,6 +20,7 @@ end
 
 group :production do
   gem 'mysql2'  
+  gem 'exception_notification'
 end
 
 group :development do

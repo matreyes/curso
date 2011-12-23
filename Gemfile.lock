@@ -70,6 +70,8 @@ GEM
       mail (~> 2.2)
       rspec (~> 2.0)
     erubis (2.7.0)
+    exception_notification (2.5.2)
+      actionmailer (>= 3.0.4)
     execjs (1.2.9)
       multi_json (~> 1.0)
     ffi (1.0.9)
@@ -233,6 +235,7 @@ DEPENDENCIES
   database_cleaner
   devise
   email_spec
+  exception_notification
   jquery-rails
   launchy
   mini_magick

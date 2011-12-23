@@ -46,8 +46,10 @@ $(document).ready(function(){
 		$('#count').html(i);
 		if(num < min){
 	 		$('#answer_answer').parents("form").find("input[type=submit]").addClass('disabled').attr("disabled", true);
+			$('#countalert').show();
 		} else {
 			$('#answer_answer').parents("form").find("input[type=submit]").removeClass('disabled').attr("disabled", false);
+			$('#countalert').hide();
 		}
 		if(i <= 0){
 			$('#count').css('color', 'red');

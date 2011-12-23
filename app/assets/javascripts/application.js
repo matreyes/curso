@@ -22,13 +22,15 @@ $(document).ready(function(){
 	  parent.find("div.off").toggle();
 	  e.preventDefault(); e.stopPropagation();
 	});
+
+	if ($('#answer_answer').length != 0){
+		var num = $('#answer_answer').val().length;
+		var min = 140;
+		var max = 1500;
+		var i = max-num;
 	
-	var num = $('#answer_answer').val().length;
-	var min = 140;
-	var max = 1500;
-	var i = max-num;
-	
-	count(i,num,min);
+		count(i,num,min);
+	}
 	
 	$('#answer_answer').keydown(function(e){
 		var num = $('#answer_answer').val().length;

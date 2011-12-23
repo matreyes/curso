@@ -74,6 +74,11 @@ class User < ActiveRecord::Base
   self.per_page = 20
 
   def to_s
+    name+" "+surname 
+  end
+  
+  #surname first
+  def complete_name
     [surname, name].compact.join(", ")
   end
 

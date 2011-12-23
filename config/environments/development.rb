@@ -35,7 +35,5 @@ Cursouno::Application.configure do
     Bullet.bullet_logger = true
     Bullet.disable_browser_cache = true
   end
-  
-  config.action_dispatch.rack_cache = {:metastore => "rails:/", :entitystore => "rails:/", :verbose => false}
-  
+    
 end

@@ -44,13 +44,14 @@ module Cursouno
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.middleware.use ExceptionNotifier,
+      :email_prefix => "[curso24] ",
+      :sender_address => %{"notifier" <curso24@pasa.cl>},
+      :exception_recipients => %w{matias.reyes@pasa.cl}
+  
   end
 end
 
 VERSION = 1
 
-  
-config.middleware.use ExceptionNotifier,
-  :email_prefix => "[curso24] ",
-  :sender_address => %{"notifier" <curso24@pasa.cl>},
-  :exception_recipients => %w{matias.reyes@pasa.cl}

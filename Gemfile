@@ -9,7 +9,8 @@ gem 'devise'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'carrierwave'
-
+gem 'exception_notification'
+  
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -20,7 +21,6 @@ end
 
 group :production do
   gem 'mysql2'  
-  gem 'exception_notification'
 end
 
 group :development do

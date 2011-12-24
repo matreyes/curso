@@ -15,8 +15,7 @@ authors: [@matias_reyes](http://twitter.com/#!/matias_reyes) and [@ferblape](htt
 
 ***
 
-You can try it with user: user@mail.com, password: 1234
-
+For user validation, it gets a csv from google docs spreadsheet.
 ***
 
 Sorry, but it's in spanish

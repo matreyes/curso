@@ -10,7 +10,7 @@ levels = Level.create([
 
 quizes = Quiz.create([
   { level_id: 1, sequence: 1,
-    question: 'Comente libremente cuáles son sus expectativas con respecto al curso.', 
+    question: 'Opine que le pareció el título de la Unidad.', 
     instant_feedback: '' },
   { level_id: 2, sequence: 2, 
     question: '¿Porqué Isabel toma esta decisión en el acto 1?', 
@@ -60,7 +60,7 @@ quizes = Quiz.create([
   ])
   
 topics = Topic.create([
-  { name: "Hablemos de cualquier cosa", abstract: "En este foro se puede conversar de los temas que le interese con sus compañeros(as)." },
-  { name: "Hablemos de sexualidad y afectividad", abstract: "Este foro es para conversar sobre sexualidad, afectividad y temas relacionados con el curso." },
-  { name: "Soporte Técnico", abstract: "¿Problemas con el curso? Coméntelas aquí y buscaremos una solución." }
+  { name: "Cafetería", abstract: "En este foro puede conversar lo que desee." },
+  { name: "Sexualidad", abstract: "Este foro es para conversar sobre sexualidad." },
+  { name: "Soporte Técnico", abstract: "¿Problemas con el curso? Consulte aquí y buscaremos una solución." }
   ])  

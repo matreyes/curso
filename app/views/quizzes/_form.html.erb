@@ -1,7 +1,7 @@
 <%= form_for [@quiz, @answer], remote: true do |f| %>
-	Quedan <span id="count"></span> letras
+	Quedan <span id="count"></span> caracteres
   <%= f.text_area :answer, class: 'span9' %><br>
-	<span id="countalert">El texto debe ser mayor a 140 letras</span><br><br>
+	<span id="countalert">Mínimo 140 caracteres</span><br><br>
 	<%= f.submit "Enviar respuesta", :disable_with => 'Enviando...', class: 'btn success large span9', style:'margin-left:5px' %><br>
 
 <% end %>

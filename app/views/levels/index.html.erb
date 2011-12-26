@@ -48,8 +48,10 @@
 			<h2>Recursos</h2><br>
 			<table class="stuff">
 				<% if current_user %>
-					<tr><td><%= image_tag 'groups.png' %></td>
-					<td><h5><%= link_to 'Foros', topics_path %></h5></td></tr>
+					<tr onclick="location.href='<%= topics_path %>'">
+						<td><%= image_tag('groups.png') %>
+						</td><td><h5>Foros</h5></td>
+					</tr>
 				<% end %>
 				<tr><td><%= image_tag 'suitcase.png' %></td><td><h5>Unidad de aprendizaje</h5></td></tr>
 				<tr><td><%= image_tag 'presentation.png' %></td><td><h5>Diapositivas</h5></td></tr>

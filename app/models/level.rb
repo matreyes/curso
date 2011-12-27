@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  tag        :string(255)
+#  sequence   :integer
 #
 
 class Level < ActiveRecord::Base

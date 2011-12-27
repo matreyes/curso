@@ -8,6 +8,7 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  instant_feedback :text
+#  sequence         :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html

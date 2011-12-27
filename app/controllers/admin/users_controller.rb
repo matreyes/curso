@@ -45,4 +45,14 @@ class Admin::UsersController < AdminController
       flash[:alert] = "Error desconocido"
     end
   end
+  
+  def deliver_email
+    if request.post?
+      Delayed::Job.enqueue PrepareEmailsJob.new(current_user, params[:all], params[:subject], params[:text])
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+  
 end

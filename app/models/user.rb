@@ -104,7 +104,7 @@ class User < ActiveRecord::Base
     return unless new_record?
 
     # Test environment
-    if Rails.env.test?
+    if Rails.env.development?
       if self.passport.to_s == '12345678-0'
         self.tutor_id = 1
         self.is_admin = false

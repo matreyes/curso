@@ -20,6 +20,9 @@
   <li <%= 'class="active"'.html_safe if params[:view_all] %>><%= link_to("Ver todos", admin_users_path(:view_all => true, :version => params[:version])) %></li>
 </ul>
 <div id="users-table">
+  <div class="pull-right">
+    <%= link_to("✉ Enviar e-mail", "#", class: "send_email") %>
+  </div>
 	<table border="0" class="users-admin" >
 		<thead>
 			<tr>
@@ -36,3 +39,5 @@
 </div>
 
 <%= will_paginate @users, class: "digg_pagination" %>
+
+<%= render partial: "shared/email_to_users", locals: { all: params[:view_all].nil? ? false : true } %>

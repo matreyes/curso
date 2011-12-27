@@ -1,0 +1,27 @@
+<div>	
+	<div id="mail-modal" class="modal hide fade in">
+		<%= form_tag admin_deliver_email_path(all: all), class: "form-mail", remote: true do %>
+			<div class="modal-header">
+				<a href="#" class="close">x</a>
+				<h5>
+				  Envío de mensaje
+				  <% if all == true %>
+				  a todos
+				  <% elsif all == false %>
+				  a mis alumnos
+				  <% end %>
+				</h5>
+			</div>
+			<div class="modal-body">
+			  <br>
+        Asunto:<br><br>
+        <input type="text" name="subject" id="subject" />
+				<br><br>
+				<%= text_area_tag :text, nil, rows: 10 %>
+			</div>		
+			<div class="modal-footer">
+				<%= submit_tag 'Enviar', :disable_with => 'Enviando...', class: "btn primary"%>
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -19,6 +19,7 @@ Cursouno::Application.routes.draw do
   namespace :admin do
     resources :users
     get '/tutors' => "users#index_tutors", as: :tutors_list
+    post 'deliver_email' => 'users#deliver_email', as: :deliver_email
   end
   
   post '/mail' => "main#send_mail"

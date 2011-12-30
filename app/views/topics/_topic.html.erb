@@ -1,7 +1,10 @@
-<div class="span10 topic">
-<%= link_to raw('<div class="well">' +
-		"<h4>#{topic.name}</h4>" +	
-	"#{topic.abstract}" +
-'</div>'), topic_comments_path(topic) %>
+<div class="topic" onclick="location.href='<%= topic_comments_path(topic) %>'">
+	<div class="span6 well">
+		<div class="image">
+			<%= image_tag topic.image_url if topic.image_url? %>
+		</div>
+		<h4><%=topic.name %></h4>	
+		<%= topic.abstract %>
+	</div>
 </div>
 	

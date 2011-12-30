@@ -1,23 +1,36 @@
 .topic{
-	a{
-		color:#404040;
-	}
-	a:hover{
-		text-decoration:none;
-	}
+	cursor: pointer;
 	.well{
-		transition: 1s;
-		-moz-transition: 1s;
-		-webkit-transition: 1s;
-		-o-transition: 1s;
+		
+		opacity: 0.7;
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+		filter:alpha(opacity=70);
+		
+		transition: .7s;
+		-moz-transition: .7s;
+		-webkit-transition: .7s;
+		-o-transition: .7s;
 	}
 	.well:hover{
-		background-color: #ECF5FF;
+		
+		opacity: 1;
+		-moz-opacity:1;
+		-khtml-opacity: 1;
+		filter:alpha(opacity=100);
+		
+		margin-left:25px;
 	}
+	
 	h4{
-		border-bottom: 1px solid #999;
-		margin-bottom:20px;
+		margin-bottom:10px;
 	}
+	.image{
+		float: left;
+		margin-right: 20px;
+		margin-top: 5px;
+	}
+	
 }
 .comment{
 	.comment-header{
@@ -42,4 +55,8 @@
 	background-color: #E5FFE5;
 }
 
+.mozaic{
+	display: inline;
+	margin-bottom:25px;
+}
 

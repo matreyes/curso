@@ -8,5 +8,23 @@
 </div>
 
 <div class="row">
-	<%= render @topics %>
+	<div class="span8">
+		<%= render @topics %>
+	</div>
+	
+	<div class="span6">
+		<%= render partial: "user", collection: @users %>
+		<script>
+		  $(function () {
+		    $(".mozaic").twipsy({
+		      live: true,
+					offset: 40
+		    })
+		  })
+		</script>
+
+	</div>
+	
+
 </div>
+

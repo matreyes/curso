@@ -4,6 +4,9 @@
  *= require_tree . 
 */
 
+*{
+	-webkit-transform-style: flat !important;
+}
 
 html, body {
 	background-color: #eee !important;

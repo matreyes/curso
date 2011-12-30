@@ -1,3 +1,3 @@
-<div class="mozaic" rel='twipsy' title='<%= user %>'>
-	<%= image_tag user.avatar.thumb.url, height: 50 %>	
+<div class="mozaic" rel='twipsy' title='<%= user %><br><%= user.email %>' onclick="location.href='mailto:<%= user.email %>'">
+	<%= image_tag user.avatar.thumb.url, height: 50 %>
 </div>

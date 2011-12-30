@@ -2,6 +2,7 @@ class LevelsController < ApplicationController
   
   before_filter :authenticate_user!, except: 'index'
   before_filter :check_level, only: 'show' 
+  before_filter :set_browser, only: 'index'
   
   def show
     @level = Level.find(params[:id])
@@ -10,12 +11,6 @@ class LevelsController < ApplicationController
   end
   
   def index
-    user_agent =  request.env['HTTP_USER_AGENT'].try(:downcase)
-    if user_agent && user_agent.index('msie')
-      @ie = true 
-    else
-      @ie = false
-    end
   end
 
   private
@@ -27,4 +22,13 @@ class LevelsController < ApplicationController
   end 
 
 
+  def set_browser
+    user_agent =  request.env['HTTP_USER_AGENT'].try(:downcase)
+    if user_agent && user_agent.index('msie')
+      @ie = true 
+    else
+      @ie = false
+    end
+  end
+  
 end

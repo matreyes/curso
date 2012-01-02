@@ -17,7 +17,11 @@ class LevelsController < ApplicationController
   
   def check_level
     if Level.find(params[:id]).sequence > current_user.current_level+1
-      redirect_to level_path(Level.where(sequence: current_user.current_level).first.id)
+      if current_user.current_level > 0
+        redirect_to level_path(Level.where(sequence: current_user.current_level).first.id)
+      else
+        redirect_to levels_path
+      end
     end
   end 
 

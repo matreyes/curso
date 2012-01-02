@@ -4,7 +4,7 @@
 			<%= image_tag topic.image_url if topic.image_url? %>
 		</div>
 		<h4><%=topic.name %></h4>	
-		<%= topic.abstract %>
+		<%= raw(topic.abstract) %>
 	</div>
 </div>
 	

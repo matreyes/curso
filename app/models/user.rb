@@ -84,6 +84,7 @@ class User < ActiveRecord::Base
 
   def passport=(p)
     p = p.tr ".", ""
+    p = p.upcase
     super p
   end
 

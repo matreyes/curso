@@ -2,9 +2,7 @@
 
 ***
 
-This is my first project, so it is not so "well written"
-
-It is a basic "wizard" course (for e-learning).
+This is a basic "wizard" course (for e-learning).
 The Idea is to have a several Levels, and then several questions, step by step (something like the codeschool.com courses)
 If someone is wants to fork go ahead.
 

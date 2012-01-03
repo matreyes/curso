@@ -1,6 +1,11 @@
 <br>
 <p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>
-
+<center>
+	<div class="well span7">
+		<%= image_tag @user.avatar.url, width:70 %>
+		<h5><%= "#{@user} / #{@user.passport} / <a href='mailto:#{@user.email}'>#{@user.email}</a>".html_safe  %></h5>
+	</div>
+</center>
 <div class="lista-preguntas">
 	<ul>
 		<% @quizzes.each_with_index do |quiz, i| %>
@@ -28,6 +33,14 @@
 	<br>
   <div class="row"><%= f.submit "Chequear / Enviar", class: "btn info offset1" %></div>
 <% end %>
+
+<center>
+	<div class="well span7">
+		<%= image_tag @user.avatar.url, width:70 %>
+		<h5><%= "#{@user} / #{@user.passport} / <a href='mailto:#{@user.email}'>#{@user.email}</a>".html_safe  %></h5>
+	</div>
+</center>
+
 
 <% if @answers.compact.any? %>
 	<p><%= link_to("☜ Volver al listado", session[:back_to]) %></p>

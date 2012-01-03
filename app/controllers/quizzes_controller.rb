@@ -1,9 +1,10 @@
 class QuizzesController < ApplicationController
-    
+   
+    before_filter :authenticate_user!
     before_filter :load_level
     before_filter :load_quiz
     before_filter :find_answer
-    before_filter :authenticate_user!
+   
 
     def show
       @answer ||= @quiz.answers.new 

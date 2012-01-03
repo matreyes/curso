@@ -3,7 +3,7 @@ class Admin::UsersController < AdminController
   def index
     params[:version] ||= VERSION
     
-    @users = User.participant.page(params[:page]).order('surname DESC').where(:version => params[:version])
+    @users = User.participant.page(params[:page]).order('surname ASC').where(:version => params[:version])
     
     if params[:q]
       @users = @users.search(params[:q])

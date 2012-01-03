@@ -1,7 +1,11 @@
 <tr>
 	<td><%= image_tag user.avatar.thumb.url, width: 30 %></td>
 	<td class="mailandpassword"><a href="mailto:<%= user.email %>"><%= user.email %></a><br><%= user.passport %></td>
-	<td><%= link_to user.complete_name, admin_user_path(user) %></td>
+	<td <%= "class='mailandpassword'" if @put_tutor %>><%= link_to user.complete_name, admin_user_path(user) %>
+		<% if @put_tutor %>
+			<br>de: <%= user.tutor %>
+		<% end %>
+		</td>
 	
 	<% Quiz.all.each do |q| %>
 		<td><%= no_link_quiz_answer(q, user) %></td>

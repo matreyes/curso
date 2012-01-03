@@ -5,6 +5,10 @@ class Admin::UsersController < AdminController
     
     @users = User.participant.page(params[:page]).order('surname ASC').where(:version => params[:version])
     
+    if params[:view_all] || params[:q]
+      @put_tutor = true
+    end
+    
     if params[:q]
       @users = @users.search(params[:q])
     else

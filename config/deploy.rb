@@ -29,7 +29,7 @@ after "deploy:update_code", :symlinks
 after "deploy:symlink", :run_migrations
 after "deploy:stop",    "delayed_job:stop"
 after "deploy:start",   "delayed_job:start"
-after "deploy:restart", "delayed_job:stop"
+after "deploy:restart", "delayed_job:restart"
 after "deploy", "deploy:cleanup"
 
 desc "Restart Application"

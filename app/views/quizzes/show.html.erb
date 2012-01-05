@@ -12,7 +12,7 @@
 
 		<div class="span10">
 				<h4>Pregunta <%= @quiz.sequence %>:</h4><br>
-				<blockquote><p class="question span9"><%= @quiz.question %></p></blockquote><br>
+				<blockquote><p class="question span9"><%= raw(@quiz.question) %></p></blockquote><br>
 				<%= render 'form' %>	
 		</div>
 	
@@ -21,7 +21,7 @@
 			<ul id="quizzes-list">
 			<% @level.quizzes.order("sequence ASC").each do |q| %>
 		  	<% if q == @quiz %>
-					<li><a href='javascript:void(null);' class='quiz-link current'><%= no_link_quiz_answer(q, current_user) + " " + q.question.truncate(25) %></a></li>
+					<li><a href='javascript:void(null);' class='quiz-link current'><%= no_link_quiz_answer(q, current_user) + " " + raw(q.question.truncate(25)) %></a></li>
 				<%else%>
 					<li><%= link_to("#{no_link_quiz_answer(q, current_user)} #{q.question.truncate(25)}".html_safe, level_quiz_path(@level,q), class: 'quiz-link') %></li>
 				<% end %>

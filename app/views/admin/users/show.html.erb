@@ -17,7 +17,7 @@
 <div class="preguntas">
 <% @answers.compact.each do |answer| %>
 	<div id="q-<%= answer.quiz.sequence %>" class="well">
-		<h4><%= no_link_quiz_answer(answer.quiz, @user).html_safe %> <%= raw(answer.quiz.question) %></h4>
+		<span class="question_on_review"><%= no_link_quiz_answer(answer.quiz, @user).html_safe %> <%= raw(answer.quiz.question) %></h4>
 		<%= simple_format(answer.answer) %>
 	</div>
 <% end %>

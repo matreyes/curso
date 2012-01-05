@@ -10,7 +10,8 @@ gem "mini_magick"
 gem "will_paginate"
 gem "carrierwave"
 gem "exception_notification"
-gem "delayed_job"
+gem "delayed_job_active_record"
+gem "daemons"
 
 # Gems used only for assets and not required
 # in production environments by default.

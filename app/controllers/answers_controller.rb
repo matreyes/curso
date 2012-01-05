@@ -1,5 +1,7 @@
 class AnswersController < ApplicationController
-  
+ 
+  before_filter :authenticate_user!
+ 
   def create
     @answer = Answer.new(params[:answer])
     @answer.quiz_id = params[:quiz_id]

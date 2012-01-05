@@ -9,15 +9,15 @@
 <div class="lista-preguntas">
 	<ul>
 		<% @quizzes.each_with_index do |quiz, i| %>
-		<li><%= link_to_unless(@answers[i].nil?, raw(quiz.question), "#q-#{quiz.id}")%></li>
+		<li><%= link_to_unless(@answers[i].nil?, "#{no_link_quiz_answer(quiz, @user)} #{quiz.question}".html_safe, "#q-#{quiz.sequence}")%></li>
 		<% end %>
 	</ul>
 </div> 
 
 <div class="preguntas">
 <% @answers.compact.each do |answer| %>
-	<div id="q-<%= answer.quiz.id %>" class="well">
-		<h4><%= raw(answer.quiz.question) %></h4>
+	<div id="q-<%= answer.quiz.sequence %>" class="well">
+		<h4><%= no_link_quiz_answer(answer.quiz, @user).html_safe %> <%= raw(answer.quiz.question) %></h4>
 		<%= simple_format(answer.answer) %>
 	</div>
 <% end %>

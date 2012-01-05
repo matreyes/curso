@@ -74,9 +74,9 @@ class User < ActiveRecord::Base
   self.per_page = 20
 
   def to_s
-    name+" "+surname 
+    name+" "+surname
   end
-  
+
   #surname first
   def complete_name
     [surname, name].compact.join(", ")
@@ -104,7 +104,7 @@ class User < ActiveRecord::Base
     return unless new_record?
 
     # Test environment
-    if Rails.env.development?
+    if Rails.env.test?
       if self.passport.to_s == '12345678-0'
         self.tutor_id = 1
         self.is_admin = false
@@ -117,7 +117,7 @@ class User < ActiveRecord::Base
     end
 
     found = false
-    read_csv.each do |row|
+    CSV.read(Rails.root.join("csv", "alumnos.csv")).each do |row|
       if row[0] == self.passport.to_s
         found = true
         self.tutor_id = row[1]
@@ -128,16 +128,5 @@ class User < ActiveRecord::Base
     unless found
       errors.add(:passport, "no se encuentra registrado.")
     end
-  end
-
-  def read_csv
-    data = []
-    begin
-      open(CSV_URL) do |f|
-        data = CSV.parse(f)
-      end
-    rescue IOError => e
-    end
-    return data
   end
 end

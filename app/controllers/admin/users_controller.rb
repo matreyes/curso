@@ -1,14 +1,16 @@
+# coding: UTF-8
+
 class Admin::UsersController < AdminController
-  
+
   def index
     params[:version] ||= VERSION
-    
+
     @users = User.participant.page(params[:page]).order('surname ASC').where(:version => params[:version])
-    
+
     if params[:view_all] || params[:q]
       @put_tutor = true
     end
-    
+
     if params[:q]
       @users = @users.search(params[:q])
     else
@@ -18,19 +20,19 @@ class Admin::UsersController < AdminController
     end
     session[:back_to] = admin_users_path(params.slice(:page, :view_all, :q, :version))
   end
-  
+
   def index_tutors
     @users = User.order('surname DESC').where(:is_admin => true)
-  end  
-  
+  end
+
   def show
     @user = User.find(params[:id])
-    @quizzes = Quiz.all 
+    @quizzes = Quiz.all
     @answers = @quizzes.map do |quiz|
       quiz.answers.where(:user_id => @user.id).first
     end
   end
-  
+
   def update
     @user = User.find(params[:id])
     @user.checked_at = Time.now
@@ -45,7 +47,7 @@ class Admin::UsersController < AdminController
       flash[:alert] = "Error desconocido"
     end
   end
-  
+
   def deliver_email
     if request.post?
       Delayed::Job.enqueue PrepareEmailsJob.new(current_user, params[:all], params[:subject], params[:text])
@@ -54,5 +56,20 @@ class Admin::UsersController < AdminController
       end
     end
   end
-  
+
+  def update_csv
+    fd = File.open(Rails.root.join("csv", "alumnos.csv"), 'w+')
+    fd.write(open(User::CSV_URL).read)
+    fd.close
+    flash[:notice] = "Lista actualizada correctamente"
+  rescue
+    logger.info "==============================="
+    logger.info "== $!: #{$!} =="
+    logger.info "==============================="
+
+    flash[:alert] = "No se ha podido actualizar la lista. Esperen o llamen a Matías"
+  ensure
+    redirect_to admin_users_path
+  end
+
 end

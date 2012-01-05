@@ -6,3 +6,4 @@ tmp/
 .DS_Store
 bin/
 public/uploads
+csv/

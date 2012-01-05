@@ -51,6 +51,7 @@ task :symlinks, :roles => [:app] do
     ln -s #{shared_path}/system #{release_path}/public/system;
     ln -s #{shared_path}/cache #{release_path}/public/;
     ln -s #{shared_path}/uploads #{release_path}/public/;
+    ln -s #{shared_path}/csv #{release_path}/cvs/;
   CMD
 end
 

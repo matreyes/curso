@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
   validates_presence_of :passport, :name, :surname
   validates_uniqueness_of :passport, :email
 
+  scope :with_avatar, where("avatar IS NOT NULL")
   scope :participant, where(is_admin: false)
   scope :search, lambda { |q|
     conditions = []

@@ -64,11 +64,9 @@ GEM
       therubyracer (~> 0.9.9)
     daemons (1.1.5)
     database_cleaner (0.7.0)
-    delayed_job (3.0.0)
+    delayed_job (2.1.4)
       activesupport (~> 3.0)
-    delayed_job_active_record (0.3.1)
-      activerecord (> 2.1.0)
-      delayed_job (~> 3.0.0)
+      daemons
     devise (1.5.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -242,7 +240,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   daemons
   database_cleaner
-  delayed_job_active_record
+  delayed_job (= 2.1.4)
   devise
   email_spec
   exception_notification

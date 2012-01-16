@@ -17,8 +17,9 @@
 <div class="preguntas">
 <% @answers.compact.each do |answer| %>
 	<div id="q-<%= answer.quiz.sequence %>" class="well">
-		<span class="question_on_review"><%= no_link_quiz_answer(answer.quiz, @user).html_safe %> <%= raw(answer.quiz.question) %></h4>
+		<span class="question_on_review"><%= no_link_quiz_answer(answer.quiz, @user).html_safe %> <%= raw(answer.quiz.question) %></span>
 		<%= simple_format(answer.answer) %>
+		<span style="float:right;">Enviado el <%= time_tag answer.updated_at %></span>
 	</div>
 <% end %>
 	

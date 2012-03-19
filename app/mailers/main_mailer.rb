@@ -2,7 +2,7 @@ class MainMailer < ActionMailer::Base
     
   def send_mail(user, to_email, message)
     @message = message
-    mail(to: to_email, :sender => 'mensajes@pasa.cl', from: user.email, subject: "[Mensaje]: #{user}")
+    mail(to: to_email, :from => 'mensajes@pasa.cl', reply_to: user.email, subject: "[Mensaje]: #{user}")
   end
 
 

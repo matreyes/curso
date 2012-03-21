@@ -28,7 +28,7 @@ end
 group :development do
   gem "capistrano"
   gem "annotate", "~>2.4.1.beta1"
-  gem "bullet"
+  # gem "bullet"
 end
 
 group :test do

@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
 
 
   has_many :participants, class_name: 'User'
+  has_many :comments, dependent: :destroy
+  has_many :answers, dependent: :destroy
   belongs_to :tutor, class_name: 'User'
   validates_presence_of :passport, :name, :surname
   validates_uniqueness_of :passport, :email

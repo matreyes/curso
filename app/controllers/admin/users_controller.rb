@@ -47,6 +47,16 @@ class Admin::UsersController < AdminController
       flash[:alert] = "Error desconocido"
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:notice] = "El usuario ha sido eliminado"
+    else
+      flash[:alert] = "Error al eliminar el usuario"
+    end
+    redirect_to session[:back_to]
+  end
 
   def deliver_email
     if request.post?

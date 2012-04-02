@@ -1,15 +1,16 @@
 <div>	
 	<div id="mail-modal" class="modal hide fade in">
-		<%= form_tag admin_deliver_email_path(all: all), class: "form-mail", remote: true do %>
+		<%= form_tag admin_deliver_email_path(all: all, version: version), class: "form-mail", remote: true do %>
 			<div class="modal-header">
 				<a href="#" class="close">x</a>
 				<h5>
 				  Envío de mensaje
 				  <% if all == true %>
-				  a todos
+				  a todos,
 				  <% elsif all == false %>
-				  a mis alumnos
+				  a mis alumnos,
 				  <% end %>
+					versión <%= version %>
 				</h5>
 			</div>
 			<div class="modal-body">

@@ -59,8 +59,17 @@ class Admin::UsersController < AdminController
   end
 
   def deliver_email
+    if params[:subject] == ""
+      flash[:alert] = "Debe escribir un asunto"
+      return false
+    end
+    if params[:text] == ""
+      flash[:alert] = "Debe escribir un mensaje"
+      return false
+    end
     if request.post?
-      Delayed::Job.enqueue PrepareEmailsJob.new(current_user, params[:all], params[:subject], params[:text])
+      Delayed::Job.enqueue PrepareEmailsJob.new(current_user, params[:all], params[:version], params[:subject], params[:text])
+      flash[:notice] = "El mensaje se ha enviado"
       respond_to do |format|
         format.js
       end

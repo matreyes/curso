@@ -44,4 +44,4 @@
 
 <%= will_paginate @users, class: "digg_pagination" %>
 
-<%= render partial: "shared/email_to_users", locals: { all: params[:view_all].nil? ? false : true } %>
+<%= render partial: "shared/email_to_users", locals: { all: params[:view_all].nil? ? false : true, version: params[:version] } %>

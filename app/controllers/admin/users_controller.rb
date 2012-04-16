@@ -12,7 +12,7 @@ class Admin::UsersController < AdminController
     end
 
     if params[:q]
-      @users = @users.search(params[:q])
+      @users = User.participant.page(params[:page]).search(params[:q]).order('surname ASC')
     else
       unless params[:view_all]
         @users = @users.where(:tutor_id => current_user.id)

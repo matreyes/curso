@@ -33,7 +33,7 @@ module LevelsHelper
     if answer.blank?
       "<span class='label'>P#{quiz.sequence}</span>".html_safe
     else
-      if !user.checked_at.blank? && user.checked_at > answer.updated_at
+      if !user.checked_at.blank? && user.checked_at > answer.first.updated_at
         "<span class='label success'>P#{quiz.sequence}</span>".html_safe
       else
         "<span class='label warning'>P#{quiz.sequence}</span>".html_safe

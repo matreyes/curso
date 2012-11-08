@@ -5,17 +5,18 @@ class Admin::UsersController < AdminController
   def index
     params[:version] ||= VERSION
 
-    @users = User.participant.page(params[:page]).order('surname ASC').where(:version => params[:version])
-
+    @users = User.participant.includes(:answers).page(params[:page]).order('surname ASC').where(:version => params[:version])
+    @quizes = Quiz.ordered.all
+    
     if params[:view_all] || params[:q]
       @put_tutor = true
     end
 
     if params[:q]
-      @users = User.participant.page(params[:page]).search(params[:q]).order('surname ASC')
+      @users = User.participant.includes(:answers).page(params[:page]).search(params[:q]).order('surname ASC')
     else
       unless params[:view_all]
-        @users = @users.where(:tutor_id => current_user.id)
+        @users = @users.includes(:answers).where(:tutor_id => current_user.id)
       end
     end
     session[:back_to] = admin_users_path(params.slice(:page, :view_all, :q, :version))

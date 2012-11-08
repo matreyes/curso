@@ -16,6 +16,7 @@ class Quiz < ActiveRecord::Base
   has_many :answers
   
   scope :next, lambda { |p| {:conditions => ["sequence > ?", p.sequence], :limit => 1, :order => "sequence"} }
+  scope :ordered, order("sequence")
   
   def resolved(user)
     if self.answers.where(user_id: user).empty? 

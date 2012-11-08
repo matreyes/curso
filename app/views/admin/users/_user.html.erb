@@ -6,9 +6,11 @@
 			<br>de: <%= user.tutor %>
 		<% end %>
 		</td>
-	
-	<% Quiz.all.each do |q| %>
-		<td><%= no_link_quiz_answer(q, user) %></td>
+
+	<% answers = user.answers.group_by(&:quiz_id) %>
+
+	<% @quizes.each do |q| %>
+	<td><%= answers_for_admin(q, user, answers[q.id]) %></td>
 	<% end %>
 	<td><%= link_to "X", admin_user_path(user.id), confirm: '¿Está seguro de que desea eliminar a '+user.name+'? (no se puede deshacer)', method: :delete %></td>
 

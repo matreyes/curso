@@ -2,9 +2,9 @@
 
 ***
 
-This is a basic "wizard" course (for e-learning).
-The Idea is to have a several Levels, and then several questions, step by step (something like the codeschool.com courses)
-If someone is wants to fork go ahead.
+This is a basic "wizard" e-learning course.
+It has several levels, and each has several questions.
+If someone wants to fork go ahead.
 
 ***
 
@@ -16,4 +16,4 @@ authors: [@matias_reyes](http://twitter.com/#!/matias_reyes) and [@ferblape](htt
 For user validation, it gets a csv from google docs spreadsheet.
 ***
 
-Sorry, but it's in spanish
+We are sorry, but it's in spanish

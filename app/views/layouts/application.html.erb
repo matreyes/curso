@@ -12,11 +12,11 @@
 	  _gaq.push(['_setDomainName', 'pasa.cl']);
 	  _gaq.push(['_trackPageview']);
 
-	  (function() {
+    (function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+    })();
 
 	</script>
 </head>
@@ -37,14 +37,16 @@
 		</div>
 
 		<footer>
-	    	<p>
-	    		&copy; PASA 2012<br>
-			  	Desarrollado por <a href="http://twitter.com/matias_reyes" style="color:#404040;">@matias_reyes</a> &amp; <a href="http://twitter.com/ferblape" style="color:#404040;">@ferblape</a>
+      <p>
+        &copy; PASA 2012<br>
+			  Desarrollado por <a href="http://twitter.com/matias_reyes" style="color:#404040;">@matias_reyes</a> &amp; <a href="http://twitter.com/ferblape" style="color:#404040;">@ferblape</a>
 			</p>
 		</footer>
 	</div>
-  <link rel="stylesheet" href="http://conector.cl/cliente/conector.css">
-  <script src="http://conector.cl/cliente/conector.js"></script>
+  <% if current_user.present? %>
+    <link rel="stylesheet" href="http://conector.cl/cliente/conector.css">
+    <script src="http://conector.cl/cliente/conector.js"></script>
+  <% end %>
 </body>
 
 

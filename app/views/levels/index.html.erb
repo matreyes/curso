@@ -9,7 +9,7 @@
 				<%= link_to "¿Usuario nuevo?", new_user_registration_path, class: "label important" %>
 			</div>
 		<% end %>
-	
+
 			<%= render 'shared/tutor_block' %>
 	</div>
 </div>
@@ -18,17 +18,24 @@
 	<div class="row">
 
 		<div class="span10 left-content">
-			
+
 			<% if current_user %>
-        <iframe src="http://player.vimeo.com/video/54390421?title=0&amp;byline=0&amp;portrait=0" width="550" height="344" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+				<p>
+					Bienvenido/a a la plataforma online del curso "Ejecución de Unidades de Aprendizaje para la educación en Sexualidad y Afectividad con Metodología de Caso de Aprendizaje".
+					<br />
+					Para comenzar, revise el <b>video</b> disponible en esta página, dónde se introducen los objetivos y la estructura del curso. Luego revise la <b>guía del curso</b> disponible en la columna de herramientas.
+					<br />
+					Una vez realizado lo anterior, presione en <b>continuar</b> para avanzar a la primera etapa del curso.
+				</p>
+        <iframe src="http://player.vimeo.com/video/54390421?title=0&amp;byline=0&amp;portrait=0" width="550" height="344" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				<!-- <iframe src="http://player.vimeo.com/video/34337169?title=0&amp;byline=0&amp;portrait=0" width="550" height="344" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
 				<br><br>
-				
+
 				<%= render "timeline" if current_user.current_level > 0 %>
 				<br>
-				
+
 				<% if current_user.current_level > 0 %>
-					<%= link_to "Continuar", level_path(current_user.current_level), 
+					<%= link_to "Continuar", level_path(current_user.current_level),
 						class: "btn danger large span9" %>
 				<% else %>
 				  	<%= link_to "Comenzar", level_path(1), class: "btn danger large span9"%>
@@ -37,18 +44,18 @@
 			<br><br><br>
 			<% else %>
 
-			
+
 			<iframe src="http://player.vimeo.com/video/34234541?byline=0" width="550" height="309" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			<br>
 			<br>
-			
+
 			<% end %>
 		</div>
 
 		<div class="span4 side">
 			<h2>Herramientas</h2><br>
 			<table class="stuff">
-				
+
 				<% if current_user %>
 					<tr onclick="location.href='<%= topics_path %>'">
 						<td><%= image_tag('groups.png') %></td><td><h5>Foros</h5></td>
@@ -57,11 +64,11 @@
 						<td><%= image_tag 'gradhat.png' %></td><td><h5>Unidad de aprendizaje de Isabel</h5></td>
 					</tr>
 				<% end %>
-				
+
 				<tr onclick="window.open('http://www.pasa.cl/?page_id=895')">
 					<td><%= image_tag 'presentation.png' %></td><td><h5>Unidades para el trabajo en aula</h5></td>
 				</tr>
-				
+
 				<% if current_user %>
 					<tr onclick="location.href='http://www.pasa.cl/archivos/curso24/guia_del_curso.pdf'">
 						<td><%= image_tag 'map.png' %></td><td><h5>Guía del curso</h5></td>
@@ -70,12 +77,12 @@
 						<td><%= image_tag 'paperclip.png' %></td><td><h5>Texto metodología</h5></td>
 					</tr>
 				<% end %>
-				
+
 				<tr onclick="window.open('http://www.pasa.cl/?page_id=91')">
 					<td><%= image_tag 'cabinet.png' %></td><td><h5>Biblioteca</h5></td>
 				</tr>
-				
-			</table>	
+
+			</table>
 			<br>
 			<% if @ie && !current_user %>
 					<div class="well span3 browsers">
@@ -85,6 +92,6 @@
 					</div>
 			<% end %>
 		</div>
-		
+
 	</div>
 </div>

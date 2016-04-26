@@ -1,11 +1,11 @@
 # coding: UTF-8
 
 levels = Level.create([
-  { id: 1, sequence: 1, name: 'Apertura', tag: 'aper' },
-  { id: 2, sequence: 2, name: 'Problematización', tag: 'prob' },
-  { id: 3, sequence: 3, name: 'Información', tag: 'info' },
-  { id: 4, sequence: 4, name: 'Aplicación', tag: 'aplic' },
-  { id: 5, sequence: 5, name: 'Cierre', tag: 'cierr' },
+  { id: 1, sequence: 1, name: 'Apertura', tag: 'aper', subtitle: 'Distinguir y emplear los componentes de una unidad de aprendizaje para la educación sexual diferenciando sus momentos, su objetivo y su situación dilemática.' },
+  { id: 2, sequence: 2, name: 'Problematización', tag: 'prob', subtitle: 'Aplicar herramientas para la resolución del momento de problematización de un caso de aprendizaje para la educación sexual utilizando saberes y conocimientos previos.' },
+  { id: 3, sequence: 3, name: 'Información', tag: 'info', subtitle: 'Aplicar los contenidos estratégicos que demanda la comprensión de un caso de aprendizaje definiendo y ejemplificando cada uno de ellos.' },
+  { id: 4, sequence: 4, name: 'Aplicación', tag: 'aplic', subtitle: 'Construir hipótesis explicativas sobre un caso de aprendizaje para la educación sexual aplicando contenidos del momento informativo.' },
+  { id: 5, sequence: 5, name: 'Cierre', tag: 'cierr', subtitle: 'Evaluar los aprendizajes desarrollados en el trabajo con una unidad de aprendizaje para la educación sexual comparando las respuestas de las etapas de problematización y aplicación.<br>Diseñar una planificación de educación sexual con la metodología de casos de aprendizaje realizando una selección fundamentada de unidades de aprendizaje.' }
   ])
 
 quizes = Quiz.create([

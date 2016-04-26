@@ -12,7 +12,7 @@ set :repository, "git://github.com/matreyes/curso.git"
 ssh_options[:forward_agent] = true
 set :keep_releases, 5
 
-set :deploy_server, '173.230.135.221'
+set :deploy_server, '45.79.193.31'
 set :user,  'pasa'
 set :port, "22"
 
@@ -75,5 +75,3 @@ namespace :delayed_job do
     run "cd #{current_path}; #{rails_env} script/delayed_job restart"
   end
 end
-
-

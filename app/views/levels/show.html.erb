@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="span10">
 			<h1><%= @level.name %></h1>
-			<span><%= @level.subtitle %></span>
+			<span><%= @level.subtitle.html_safe %></span>
 		</div>
 			<%= render 'shared/tutor_block' %>
 	</div>
